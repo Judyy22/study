@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <style>
+        table, td{
+            border : 1px solid #ccc;
+            border-collapse: collapse;
+        }
+        td{
+            padding: 5px;
+            font-size: 0.9em;
+        }
+    </style>
+  </head>
+  <body>
+    <script>
+      var memNum = prompt("입장객 수를 입력해주세요");
+      var colNum = prompt("한 줄에 앉을 사람의 수를 입력해주세요");
+
+      if (memNum % colNum === 0) rowNum = parseInt(memNum / colNum);
+      else rowNum = parseInt(memNum / colNum + 1);
+
+      //   document.write("총 " + rowNum + " 개의 줄이 필요합니다.");
+
+      document.write("<table>");
+      for (var i = 0; i < rowNum; i++) {
+        document.write("<tr>");
+        for (var j = 1; j <= colNum; j++) {
+          seatNo = i * colNum + j;
+          if (seatNo > memNum) break;
+          document.write("<td>좌석" + seatNo + " </td>");
+        }
+        document.write("</tr>");
+      }
+      document.write("</table>");
+    </script>
+  </body>
+</html>

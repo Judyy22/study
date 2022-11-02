@@ -1,0 +1,28 @@
+.box{
+    width: 100px;
+    height: 100px;
+}
+
+.red{
+    background-color: red;
+}
+
+.yellow{
+    background-color: yellow;
+}
+
+.blue{
+    background-color: blue;
+}
+
+.locate{
+    position: static;
+    left: 30px;
+    top: 30px;
+}
+
+/* relative : 있는 자리에서 이동 */
+/* absolute : 부모 영영을 기준이로 */
+/* static : 웹 사이트의 default값, left, top right bottom 이해못함!  */
+/* fixed : absolute와 비슷하지만 스크롤로 내려도 그 위치에 고정, 무조건 브라우저 창 기준임! */
+/* sticky : relative와 비슷하지만 스크롤면 fixed처럼 그 위치에 고정!! */
