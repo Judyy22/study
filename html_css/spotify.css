@@ -35,6 +35,8 @@ main{
 footer{
     height: 530px;
     background-color: black;
+    display: flex;
+    justify-content: center;
 }
 
 .menu{
@@ -43,28 +45,121 @@ footer{
 }
 
 .headline{
-    font-size: 146px;
-    line-height: 166px;
-    color: #1ed760;
+    font-size: 156px;
     font-weight: 900;
+    color: #1ed760;
     position: relative;
     left: 225px;
     padding-bottom: 40px;
 }
 
-.headline_first{
+.headline-first{
     position: relative;
     left: -2.5em;
 }
 
 .sub-headline{
     color: #1ed760;
+    text-align: center;
     font-size: 18px;
-    line-height: 24px;
     padding-bottom: 40px;
+}
+
+.button-area{
     text-align: center;
 }
 
-.button{
-    color: wheat; 
+.button-style{
+    background-color: #1ed760;
+    padding: 14px 32px;
+    border: none;
+    border-radius: 500px;
+    color: #2941ab;
+    font-weight: 700;
+}
+
+.button-style:hover{
+    transform: scale(1.1);
+}
+
+.container{
+    max-width: 1170px;
+    padding-top: 80px;
+    padding-bottom: 50px;
+    width: 100%;
+}
+
+.footer-menu{
+    display: flex;
+    justify-content: space-between;
+    height:346px;
+}
+
+.first-box{
+    display: flex;
+    justify-content: space-between;
+    width: 60%;
+
+}
+.column{
+    display: flex;
+    flex-direction: column;
+    padding: 0 15px;;
+    
+}
+
+.second-box{
+    width: 40%;
+}
+
+.sub-title{
+    color: #919496;
+    font-weight: 900;
+    margin: 20px 0px;
+}
+
+.footer-menu-item{
+    padding-bottom: 15px;
+    padding-top: 3px;
+    font-size: 16px;
+}
+
+.second-box{
+    display: flex;
+    justify-content: end;
+    width: 40%;
+}
+
+.icon-box{
+    width: 54px;
+    height: 54px;
+    background-color: #222322;
+    border-radius: 50%;
+    margin-right: 15px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.icon{
+    font-size: 24px;
+}
+
+.first-line{
+    display: flex;
+    justify-content: flex-end;
+    color: #919496;
+    font-size: 12px;
+}
+
+.second-line{
+    display: flex;
+    justify-content: space-between;
+    margin-top: 12px;
+    color: #919496;
+}
+
+.second-line-item{
+    color: #919496;
+    margin-right: 24px;
 }
