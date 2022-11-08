@@ -1,0 +1,276 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>YHtour</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans+KR&display=swap" rel="stylesheet">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-Zenh87qX5JnK2Jl0vWa8Ck2rdkQ2Bzep5IDxbcnCeuOxjzrPF/et3URy9Bv1WTRi" crossorigin="anonymous">
+    <link rel="stylesheet" href="YHtour.css">
+</head>
+
+<body>
+    <nav class="navbar navbar-dark navbar-expand-lg navground">
+        <div class="container">
+            <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                <a class="navbar" href="YHtour.html"><img src="resources/logo.png" width="60px"></a>
+                <a class="nav-link active fs-4 text-white mb-2 pe-3 ps-3" href="YHreport.html">YHtour</a>
+                <button class="navbar-toggler" type="button" data-bs-toggle="collapse"
+                    data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent"
+                    aria-expanded="false" aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+                <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+                    <li class="nav-item">
+                        <a class="nav-link active" href="#">해외여행</a>
+                    </li>
+                    <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle active" href="#" role="button" data-bs-toggle="dropdown"
+                            aria-expanded="false">
+                            국내여행
+                        </a>
+                        <ul class="dropdown-menu">
+                            <li><a class="dropdown-item" href="#">제주도</a></li>
+                            <li><a class="dropdown-item" href="#">내륙</a></li>
+                        </ul>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link active" href="#">항공</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link active" href="#">호텔</a>
+                    </li>
+                    <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle active" href="#" role="button" data-bs-toggle="dropdown"
+                            aria-expanded="false">
+                            투어/입장권
+                        </a>
+                        <ul class="dropdown-menu">
+                            <li><a class="dropdown-item" href="#">투어</a></li>
+                            <li><a class="dropdown-item" href="#">입장권</a></li>
+                        </ul>
+                    </li>
+                </ul>
+                <form class="d-flex" role="search">
+                    <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search"
+                        style="width: 300px;">
+                    <button class="btn btn-outline-light" type="submit">Search</button>
+                </form>
+            </div>
+        </div>
+    </nav>
+
+    <content>
+        <!-- 캐러샐-->
+        <div id="carouselExampleIndicators" class="carousel slide" data-bs-ride="true">
+            <div class="carousel-indicators">
+                <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="0" class="active"
+                    aria-current="true" aria-label="Slide 1"></button>
+                <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="1"
+                    aria-label="Slide 2"></button>
+                <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="2"
+                    aria-label="Slide 3"></button>
+                <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="3"
+                    aria-label="Slide 4"></button>
+            </div>
+            <div class="carousel-inner">
+                <div class="carousel-item active">
+                    <img src="https://cimgcdn.ybtour.co.kr//attachHome/MN/BN/202210/202210281702176741102001001054.jpg"
+                        class="d-block w-100">
+                </div>
+                <div class="carousel-item">
+                    <img src="https://cimgcdn.ybtour.co.kr//attachHome/MN/BN/202210/202210261523273181104009002010.jpg"
+                        class="d-block w-100">
+                </div>
+                <div class="carousel-item">
+                    <img src="https://cimgcdn.ybtour.co.kr//attachHome/MN/BN/202210/202210041405455561802007001046.jpg"
+                        class="d-block w-100">
+                </div>
+                <div class="carousel-item">
+                    <img src="	https://cimgcdn.ybtour.co.kr//attachHome/MN/BN/202210/202210251024438842210002001031.jpg"
+                        class="d-block w-100">
+                </div>
+            </div>
+            <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleIndicators"
+                data-bs-slide="prev">
+                <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                <span class="visually-hidden">Previous</span>
+            </button>
+            <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleIndicators"
+                data-bs-slide="next">
+                <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                <span class="visually-hidden">Next</span>
+            </button>
+        </div>
+        <!-- 캐러샐 끝 -->
+
+        <!-- 캐러샐 위 탭 -->
+        <div class="tab">
+            <p class="con_title">어디로 떠나고 싶으세요?</p>
+            <ul class="nav nav-tabs" id="myTab" role="tablist">
+                <li class="nav-item" role="presentation">
+                    <button class="nav-link active" id="home-tab" data-bs-toggle="tab" data-bs-target="#home-tab-pane"
+                        type="button" role="tab" aria-controls="home-tab-pane" aria-selected="true">패키지</button>
+                </li>
+                <li class="nav-item" role="presentation">
+                    <button class="nav-link" id="profile-tab" data-bs-toggle="tab" data-bs-target="#profile-tab-pane"
+                        type="button" role="tab" aria-controls="profile-tab-pane" aria-selected="false">항공</button>
+                </li>
+                <li class="nav-item" role="presentation">
+                    <button class="nav-link" id="contact-tab" data-bs-toggle="tab" data-bs-target="#contact-tab-pane"
+                        type="button" role="tab" aria-controls="contact-tab-pane" aria-selected="false">호텔</button>
+                </li>
+            </ul>
+            <div class="tab-content">
+                <div class="tab-pane fade show active" id="home-tab-pane" role="tabpanel" aria-labelledby="home-tab"
+                    tabindex="0">
+                    <div class="d-flex mt-3 justify-content-evenly">
+                        <input type="text" class="form-control" placeholder="여행지 입력" style="width:60%">
+                        <button type="button" class="btn btn-outline-success" style="width:30%">지역검색</button>
+                    </div>
+
+                </div>
+                <div class="tab-pane fade" id="profile-tab-pane" role="tabpanel" aria-labelledby="profile-tab"
+                    tabindex="0">
+                    <div class="d-flex mt-3 justify-content-evenly">
+                        <input type="text" class="form-control" placeholder="항공사 입력" style="width:60%">
+                        <button type="button" class="btn btn-outline-success" style="width:30%">항공검색</button>
+                    </div>
+                </div>
+                <div class="tab-pane fade" id="contact-tab-pane" role="tabpanel" aria-labelledby="contact-tab"
+                    tabindex="0">
+                    <div class="d-flex mt-3 justify-content-evenly">
+                        <input type="text" class="form-control" placeholder="숙박지 입력" style="width:60%">
+                        <button type="button" class="btn btn-outline-success" style="width:30%">호텔검색</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- 캐러샐 위 탭 끝 -->
+
+
+        <div>
+            <div class="d-flex justify-content-center container">
+                <div class="text-center m-5 p-4 bg-light " style="width: 100%;">
+                    <p class="fs-2 ">국내여행</p>
+                </div>
+            </div>
+
+            <!-- 여행지 카드 -->
+            <div class="mt-5">
+                <div class="d-flex justify-content-evenly">
+                    <div>
+                        <div class="card shadow" style="width: 18rem;">
+                            <img src="resources/jeju.jpg" class="card-img-top">
+                            <div class="card-body">
+                                <h5 class="card-title">제주도</h5>
+                                <p class="card-text ellipsis2">섬 전체가 하나의 거대한 관광자원인 제주도. 에메랄드빛 물빛이 인상적인 협재 해수욕장은 제주 대표
+                                    여행지며, 파도가
+                                    넘보는 주상절리와 바다 위 산책로인 용머리 해안은 제주에서만 볼 수 있는 천혜의 자연경관으로 손꼽힌다.</p>
+                                <a href="#" class="btn btn-success">더 알아보기</a>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div>
+                        <div class="card shadow" style="width: 18rem;">
+                            <img src="resources/gangneung.jpg" class="card-img-top">
+                            <div class="card-body">
+                                <h5 class="card-title">강릉</h5>
+                                <p class="card-text ellipsis2">은은한 커피향이 남다른 강원도 강릉시. 그중에도 카페거리로 유명한 안목해변은 발이 닿는 어디든 향긋한
+                                    커피 한 잔에
+                                    지평선 끝까지 펼쳐지는 바다 풍경은 덤으로 얻을 수 있다. 일출 명소로 유명한 정동진과 야경이 아름다운 경포대는 대표 여행 코스!</p>
+                                <a href="#" class="btn btn-success">더 알아보기</a>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div>
+                        <div class="card shadow" style="width: 18rem;">
+                            <img src="resources/jeonju.jpg" class="card-img-top">
+                            <div class="card-body">
+                                <h5 class="card-title">전주</h5>
+                                <p class="card-text ellipsis2">한국의 멋이 살아있는 전주. 도심 한복판에 자리한 한옥마을에 들어서면 시대를 거슬러가는 기분이다.
+                                    '경사스러운 터에
+                                    지어진 궁궐'이란 의미의 경기전에 들어서면 대나무가 서로 부대끼며 내는 소리에 귀 기울이게 된다.</p>
+                                <a href="#" class="btn btn-success">더 알아보기</a>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div>
+                        <div class="card shadow" style="width: 18rem;">
+                            <img src="resources/yeosu.jpg" class="card-img-top">
+                            <div class="card-body">
+                                <h5 class="card-title">여수</h5>
+                                <p class="card-text ellipsis2">국제 해양관광의 중심 전남 여수시. 3천여 그루의 동백나무로 가득 찬 붉은 섬 오동도는 웰빙 트래킹
+                                    코스를 갖추고 있어
+                                    한층 더 운치 있다. 해상 케이블카를 타면 마치 바다 위를 걷는 듯한 느낌이 들며 탁 트인 바다 전망을 감상할 수 있다.</p>
+                                <a href="#" class="btn btn-success">더 알아보기</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- 여행지 카드 끝 -->
+    </content>
+
+
+    <footer class="text-center text-white" style="background-color: #483838">
+        <div class="container">
+            <section class="mt-5">
+                <div class="row text-center d-flex justify-content-center pt-5">
+                    <div class="col-md-2">
+                        <h6 class="text-uppercase font-weight-bold">
+                            <a href="#!" class="text-white">About us</a>
+                        </h6>
+                    </div>
+                    <div class="col-md-2">
+                        <h6 class="text-uppercase font-weight-bold">
+                            <a href="#!" class="text-white">Products</a>
+                        </h6>
+                    </div>
+                    <div class="col-md-2">
+                        <h6 class="text-uppercase font-weight-bold">
+                            <a href="#!" class="text-white">Best</a>
+                        </h6>
+                    </div>
+                    <div class="col-md-2">
+                        <h6 class="text-uppercase font-weight-bold">
+                            <a href="#!" class="text-white">Help</a>
+                        </h6>
+                    </div>
+                    <div class="col-md-2">
+                        <h6 class="text-uppercase font-weight-bold">
+                            <a href="#!" class="text-white">Contact</a>
+                        </h6>
+                    </div>
+                </div>
+            </section>
+            <hr class="my-5" />
+            <section>
+                <div class="row d-flex justify-content-start">
+                    <div class="col-lg-12">
+                        <p>
+                            약상자에는 없는 치료제가 여행이다. 여행은 모든 세대를 통틀어 가장 잘 알려진 예방약이자 치료제이며 동시에 회복이다.
+                        </p>
+                        <p>A cure that is not in the medicine box is travel. Travel is the most well-known preventive
+                            and therapeutic drug of all generations and at the same time recovery.</p>
+                    </div>
+                </div>
+            </section>
+        </div>
+    </footer>
+    <!-- Footer -->
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-OERcA2EqjJCMA+/3y+gxIOqMEjwtxJY7qPCqsdltbNJuaOe923+mo//f6V8Qbsw3"
+        crossorigin="anonymous"></script>
+</body>
+
+</html>

@@ -1,0 +1,34 @@
+body{
+    background-color: #D2D79F;
+    font-family: 'IBM Plex Sans KR', sans-serif;
+    margin: 0;
+}
+.navground{
+    background-color: #42855B;
+}
+.tab{
+    position: absolute;
+    top: 200px;
+    right: 42%;
+    z-index: 3;
+    width: 500px;
+    margin-right: -610px;
+    padding: 40px 40px 20px;
+    background: #fff;
+}
+.con_title{
+    margin-bottom: 20px;
+    line-height: 1;
+    font-size: 24px;
+    font-family: 'Noto_m';
+    color: #222;
+}
+
+.ellipsis2 {
+    overflow: hidden;
+    text-overflow: ellipsis;
+    display: -webkit-box;
+    -webkit-line-clamp: 2; 
+    -webkit-box-orient: vertical;
+}
+
