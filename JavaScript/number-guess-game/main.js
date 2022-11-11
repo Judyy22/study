@@ -71,9 +71,12 @@ function reset() {
   //user input 창이 깨끗하게 정리되고
   userInput.value = "";
   //새로운 번호가 생성이 되고
-  pickRandomNum();
-
+  gameOver = false;
+  playButton.disabled = false;
+  chances = 5;
+  chanceArea.innerHTML = `남은 기회:${chances}`;
   resultArea.textContent = "결과값이 여기 나옵니다.";
+  pickRandomNum();
 }
 
 pickRandomNum();
