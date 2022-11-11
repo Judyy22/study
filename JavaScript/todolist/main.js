@@ -12,10 +12,13 @@
 let taskInput = document.getElementById("task-input");
 let addButton = document.getElementById("add-button");
 let tabs = document.querySelectorAll(".task-tabs div");
+let underLine = document.getElementById("under-line");
 let taskList = [];
 let filterList=[];
 let mode = "all";
+
 addButton.addEventListener("click", addTask);
+taskInput.addEventListener("focus",function(){taskInput.value=""})
 
 for (let i = 1; i < tabs.length; i++) {
   tabs[i].addEventListener("click", function (event) {
@@ -93,8 +96,7 @@ function deleteTask(id) {
 function filter(event) {
   mode = event.target.id;
   filterList = [];
-
-  document.getElementById()
+  
 
   if (mode == "all") {
     render();
