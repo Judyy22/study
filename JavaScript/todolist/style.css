@@ -4,6 +4,10 @@ body {
     background-repeat: no-repeat;
     background-size: cover;
 }
+button{
+    border: none;
+    background-color:transparent
+}
 
 .container {
     background-color: white;
@@ -35,6 +39,29 @@ body {
     justify-content: space-between;
     padding: 1em;
 }
+.taskbox{
+    background-color: lightgray;
+}
 .task-done{
     text-decoration: line-through;
+    /* background-color: lightgray; */
+}
+
+.trash{
+    color: red;
+    font-size: 20px;
+}
+
+.refresh{
+    color: gray;
+    font-size: 20px;
+}
+
+.check{
+    color: green;
+    font-size: 20px;
+}
+
+.task-tabs div{
+    cursor: pointer;
 }
