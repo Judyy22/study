@@ -4,28 +4,70 @@ body {
     background-repeat: no-repeat;
     background-size: cover;
 }
-button{
+
+button {
     border: none;
-    background-color:transparent
+    background-color: transparent
 }
 
 .container {
     background-color: white;
     min-height: 100vh;
     box-shadow: rgba(0, 0, 0, 0.25) 0px 54px 55px, rgba(0, 0, 0, 0.12) 0px -12px 30px, rgba(0, 0, 0, 0.12) 0px 4px 6px, rgba(0, 0, 0, 0.17) 0px 12px 13px, rgba(0, 0, 0, 0.09) 0px -3px 5px;
+    border-top: 10px solid lightblue;
+    border-bottom: 10px solid pink;
+    height: 80%;
 }
-.task-area{
+
+.input-area {
+    position: relative;
+}
+
+#task-input {
+    transition: padding-top 0.2s ease, margin-top 0.2s ease;
+    width: 80%;
+    border: none;
+    border: 1px solid pink;
+}
+
+#task-input:focus {
+    outline: none;
+    border-bottom: 3px solid pink;
+    border-left: none;
+    border-right: none;
+    border-top: none;
+    /* transition: 0.5s;
+    padding-top: 35px; */
+}
+
+#add-button {
+    border: none;
+    background-color: pink;
+    box-shadow: rgba(0, 0, 0, 0.02) 0 1px 3px 0;
+}
+
+#add-button:hover {
+    background-color: lightblue;
+}
+
+.task-area {
     border: 1px solid lightgray;
+    margin-top: 1em;
+    position: relative;
 }
-.task-tabs{
+
+.task-tabs {
     display: flex;
     border-bottom: 1px solid lightgray;
     position: relative;
 }
-.task-tabs div{
-    padding:1em;
+
+.task-tabs div {
+    padding: 1em;
+    cursor: pointer;
 }
-#under-line{
+
+#under-line {
     height: 4px;
     background-color: pink;
     position: absolute;
@@ -33,35 +75,40 @@ button{
     left: 0px;
     top: 52px;
     padding: 0px;
+    transition: 0.5s;
+    padding: 0px;
 }
-.task{
+
+.task {
     display: flex;
     justify-content: space-between;
     padding: 1em;
 }
-.taskbox{
+
+.taskbox {
     background-color: lightgray;
 }
-.task-done{
+
+.task-done {
     text-decoration: line-through;
     /* background-color: lightgray; */
 }
 
-.trash{
+.trash {
     color: red;
     font-size: 20px;
 }
 
-.refresh{
-    color: gray;
+.refresh {
+    color: lightslategray;
     font-size: 20px;
 }
 
-.check{
-    color: green;
+.check {
+    color: limegreen;
     font-size: 20px;
 }
 
-.task-tabs div{
+.task-tabs div {
     cursor: pointer;
 }
