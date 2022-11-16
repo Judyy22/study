@@ -14,11 +14,13 @@ let addButton = document.getElementById("add-button");
 let tabs = document.querySelectorAll(".task-tabs div");
 let underLine = document.getElementById("under-line");
 let taskList = [];
-let filterList=[];
+let filterList = [];
 let mode = "all";
 
 addButton.addEventListener("click", addTask);
-taskInput.addEventListener("focus",function(){taskInput.value=""})
+taskInput.addEventListener("focus", function () {
+  taskInput.value = "";
+});
 
 for (let i = 1; i < tabs.length; i++) {
   tabs[i].addEventListener("click", function (event) {
@@ -39,12 +41,12 @@ function addTask() {
 
 function render() {
   let list = [];
-  if(mode == "all"){
+  if (mode == "all") {
     list = taskList;
-  }else if(mode == "ongoing"){
+  } else if (mode == "ongoing") {
     list = filterList;
-  }else if(mode == "done"){
-    list = filterList
+  } else if (mode == "done") {
+    list = filterList;
   }
 
   let resultHTML = "";
@@ -78,7 +80,7 @@ function toggleComplete(id) {
       break;
     }
   }
-  render();
+  filter();
 }
 
 function deleteTask(id) {
@@ -89,14 +91,19 @@ function deleteTask(id) {
       break;
     }
   }
-  render();
-  console.log(taskList);
+  filter();
 }
 
 function filter(event) {
-  mode = event.target.id;
+  if (event) {
+    mode = event.target.id;
+    underLine.style.width = event.target.offsetWidth + "px";
+    underLine.style.left = event.target.offsetLeft + "px";
+    underLine.style.top =
+      event.target.offsetTop + (event.target.offsetHeight - 4) + "px";
+  }
+
   filterList = [];
-  
 
   if (mode == "all") {
     render();
@@ -107,14 +114,15 @@ function filter(event) {
       }
     }
     render();
-  }else if(mode=="done"){
-    for (let i=0;i<taskList.length;i++){
+  } else if (mode == "done") {
+    for (let i = 0; i < taskList.length; i++) {
       if (taskList[i].isComplete == true) {
         filterList.push(taskList[i]);
       }
-    }render();
+    }
+    render();
   }
-  console.log(filterList)
+  console.log(filterList);
 }
 
 function randomIDGenerate() {
