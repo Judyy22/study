@@ -1,10 +1,14 @@
 let news = [];
+let menus = document.querySelectorAll(".menus button");
+menus.forEach((menu) =>
+    menu.addEventListener("click", (event) => getNewsByTopic(event))
+);
 const getLatestNews = async () => {
     let url = new URL(
         `https://api.newscatcherapi.com/v2/latest_headlines?countries=US&topic=business&page_size=10`
     );
     let header = new Headers({
-        // "x-api-key": "1_bgNj0YXjhQBMlu8JXlbQzZ-rNpUAUehOL8KopGC_E",
+        "x-api-key": "1_bgNj0YXjhQBMlu8JXlbQzZ-rNpUAUehOL8KopGC_E",
     });
     let response = await fetch(url, { headers: header });
     let data = await response.json();
@@ -12,6 +16,15 @@ const getLatestNews = async () => {
     console.log(news);
 
     render();
+};
+
+const getNewsByTopic = (event) => {
+    console.log("클릭됨", event.target.textContent);
+
+    let topic = event.target.textContent.toLowerCase();
+    let url = new URL(
+        `https://api.newscatcherapi.com/v2/latest_headlines?contries=US&page_size=10&topic=${topic}`
+    );
 };
 
 const render = () => {
