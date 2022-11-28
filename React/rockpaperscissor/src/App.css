@@ -1,13 +1,32 @@
-.box{
+.box {
+    margin: 10px;
+    width: 800px;
+    height: 800px;
     border: 1px solid black;
-    width: 500px;
+    background-color: white;
+    justify-content: space-around;
+    flex-direction: column;
+    text-align: center;
+    font-size: 20pt;
 }
 
-.item-img{
-    width: 400px;;
+.item-img {
+    width: 400px;
 }
 
-.main{
+.main {
     display: flex;
     justify-content: center;
+}
+.win {
+    border: 10px solid green;
+    color: green;
+}
+.lose {
+    border: 10px solid red;
+    color: red;
+}
+.tie {
+    border: 10px solid black;
+    color: black;
 }
