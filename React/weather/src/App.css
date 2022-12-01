@@ -1,0 +1,35 @@
+body {
+    background-image: url("https://nordicapis.com/wp-content/uploads/5-Best-Free-and-Paid-Weather-APIs-2019-e1587582023501-1024x576.png");
+    height: 100vh;
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
+.container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    flex-direction: column;
+}
+
+.weather-box {
+    border: 3px solid white;
+    padding: 80px;
+    border-radius: 30px;
+    width: 600px;
+    background-color: white;
+    margin: 30px;
+    text-align: center;
+}
+
+.weather-button {
+    border: 3px solid black;
+    padding: 10px 50px;
+    border-radius: 50px;
+    background-color: black;
+}
+
+.weather-button button {
+    margin: 10px;
+}
