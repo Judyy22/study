@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import "./App.css";
 
 function App() {
@@ -20,8 +20,18 @@ function App() {
     // let counter = 0을 거치면서 counter 값은 다시 0으로 초기화 된다.
     // state값은 update가 되면서 다시 render를 한다.
 
+    useEffect(()=>{
+        console.log("useEffect1 Fire");
+        //api 부를때 씀
+    },[])
+
+    useEffect(()=>{
+        console.log("useEffect2 Fire");
+    }, [counter2])
+
     return (
         <div>
+            {console.log("render")}
             <div>{counter}</div>
             <div>state:{counter2}</div>
             <button onClick={increase}>클릭!</button>
