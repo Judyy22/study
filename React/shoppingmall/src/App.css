@@ -42,3 +42,15 @@
     transform: scale(1.1);
     z-index: 1;
 }
+
+.product-img {
+    display: flex;
+    justify-content: flex-end;
+}
+.drop-down {
+    margin-top: 20px;
+}
+.add-button {
+    margin-top: 20px;
+    width: 100%;
+}
