@@ -11,7 +11,7 @@ import UserPage from "./page/UserPage";
 function App() {
     const [authenticate, setAuthenticate] = useState(false);
     const PrivateRoute = () => {
-        return authenticate == true ? <UserPage /> : <Navigate to="/login" />;
+        return authenticate ==  true? <UserPage /> : <Navigate to="/login" />;
     };
 
     return (
