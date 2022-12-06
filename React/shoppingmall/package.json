@@ -1,5 +1,4 @@
 {
-  "homepage":"https://judyy22.github.io/shoppingmall/",
   "name": "shoppingmall",
   "version": "0.1.0",
   "private": true,
@@ -48,5 +47,6 @@
   },
   "devDependencies": {
     "gh-pages": "^4.0.0"
-  }
+  },
+  "homepage": "https://judyy22.github.io/shoppingmall"
 }

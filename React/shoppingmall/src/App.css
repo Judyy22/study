@@ -54,3 +54,61 @@
     margin-top: 20px;
     width: 100%;
 }
+.burger-menu {
+    margin-left: 20px;
+}
+.hide {
+    visibility: hidden;
+}
+
+@media screen and (max-width: 63rem) {
+    .hide {
+        visibility: visible;
+    }
+    .menu {
+        display: none;
+    }
+    .search-box {
+        display: none;
+    }
+}
+.side-menu {
+    height: 100%;
+    width: 250px;
+    position: fixed;
+    z-index: 1;
+    top: 0;
+    left: 0;
+    background-color: burlywood;
+    overflow-x: hidden;
+    transition: 0.5s;
+    padding-top: 60px;
+    z-index: 2;
+}
+.side-menu-list button {
+    margin: 5px;
+    border: none;
+    background: none;
+    width: 120px;
+}
+
+.side-menu .closebtn {
+    position: absolute;
+    top: 0;
+    right: 25px;
+    font-size: 36px;
+    margin-left: 50px;
+    border: none;
+    background: none;
+}
+
+.side-menu-list {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.side-menu-list button:hover {
+    background-color: beige;
+    border-radius: 3px;
+}

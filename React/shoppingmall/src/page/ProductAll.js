@@ -9,10 +9,11 @@ const ProductAll = () => {
     const getProducts = async () => {
         let searchQuery = query.get("q") || "";
         console.log("searchQuery", searchQuery);
-        let url = `https://my-json-server.typicode.com/Judyy22/shoppingmall/products?q=${searchQuery}`;
+        let url = `https://my-json-server.typicode.com/judyy22/shoppingmall/products?q=${searchQuery}`;
         let response = await fetch(url);
         let data = await response.json();
         setproductList(data);
+        console.log("data",url);
     };
     useEffect(() => {
         getProducts();

@@ -1,9 +1,8 @@
-import { Route, Routes } from "react-router-dom";
+import { BrowserRouter, Route, Routes } from "react-router-dom";
 import "./App.css";
 import "bootstrap/dist/css/bootstrap.min.css";
 import Login from "./page/Login";
 import ProductAll from "./page/ProductAll";
-import ProductDetail from "./page/ProductDetail";
 import Navbar from "./component/Navbar";
 import { useEffect, useState } from "react";
 import PrivateRoute from "./route/PrivateRoute";
@@ -14,6 +13,7 @@ import PrivateRoute from "./route/PrivateRoute";
 // 3. 로그인 버튼을 누르면 로그인 페이지가 나온다.
 // 4. 삼품 디테일을 눌렀으나, 로그인이 안되있을경우에는 로그인 페이지가 먼저 나온다.
 // 5. 로그인이 되어있을 경우에는 상품 디테일 페이지를 볼 수 있다.
+
 // 6. 로그아웃 버튼을 클릭하면 로그아웃이 된다.
 // 7. 로그아웃이 되면 상품 디테일 페이지를 볼 수 없다. 다시 로그인 페이지로 간다.
 // 8. 로그인을 하면 로그아웃이 보이고 로그아웃을 하면 로그인이 보인다.
@@ -25,7 +25,10 @@ function App() {
     }, [authenticate]);
     return (
         <div>
-            <Navbar />
+            <Navbar
+                authenticate={authenticate}
+                setAuthenticate={setAuthenticate}
+            />
             <Routes>
                 <Route path="/" element={<ProductAll />} />
                 <Route
