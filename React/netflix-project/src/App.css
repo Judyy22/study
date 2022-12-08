@@ -1,0 +1,23 @@
+.nav-tiem {
+    color: white;
+    text-decoration: none;
+    margin-right: 20px;
+}
+
+.nav-tiem:hover {
+    color: red;
+}
+
+.nav-background {
+    background-color: black;
+}
+
+.button-color {
+    background-color: red;
+    color: white;
+    border: none;
+}
+
+.button-color:hover {
+    background-color: #FF3636;
+}
