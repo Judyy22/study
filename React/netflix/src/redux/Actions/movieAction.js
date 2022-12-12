@@ -18,11 +18,18 @@ function getMovies() {
                 `/movie/upcoming?api_key=${API_KEY}&language=en-US&page=1`
             );
 
-            let [popularMovies, topRatedMovies, upcomingMovies] =
-                await Promise.all([populrMovieApi, topRateApi, upComingApi]);
-            console.log(popularMovies);
-            console.log(topRatedMovies);
-            console.log(upcomingMovies);
+            const genreApi = api.get(
+                `/genre/movie/list?api_key=${API_KEY}&language=en-US`
+            );
+
+            let [popularMovies, topRatedMovies, upcomingMovies, genreList] =
+                await Promise.all([
+                    populrMovieApi,
+                    topRateApi,
+                    upComingApi,
+                    genreApi,
+                ]);
+            console.log("장르 리스트?", genreList);
 
             dispatch({
                 type: "GET_MOVIES_SUCCESS",
@@ -30,6 +37,7 @@ function getMovies() {
                     popularMovies: popularMovies.data,
                     topRatedMovies: topRatedMovies.data,
                     upcomingMovies: upcomingMovies.data,
+                    genreList: genreList.data.genres,
                 },
             });
         } catch (error) {
