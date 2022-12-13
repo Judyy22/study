@@ -80,15 +80,66 @@ body {
     transition: 0.5s;
 }
 
-/* .card:hover .overlay .head {
-    transform: translateY(0px);
-} */
-
-/* .card:hover .overlay hr {
-    width: 75px;
-    transition-delay: 0.4s;
-} */
-
 .card:hover .overlay {
     opacity: 1;
+}
+
+.movie-detail {
+    margin-top: 50px;
+}
+
+.movie-detail-img {
+    width: 100%;
+}
+.movie-detail-first {
+    padding: 30px 10px;
+}
+.movie-detail-genre {
+    font-size: 25px;
+}
+
+.movie-detail-genre-own {
+    margin: 8px;
+}
+
+.movie-detail-title {
+    font-size: 60px;
+}
+
+.movie-detail-tagline {
+    font-size: 20px;
+}
+
+.movie-detail-vote {
+    margin-left: 20px;
+}
+
+.movie-detail-popularity {
+    margin-left: 20px;
+}
+.fontawesome {
+    margin-right: 5px;
+}
+
+.movie-detail-adulte {
+    margin-left: 20px;
+    color: #ff3636;
+    font-weight: bold;
+    font-size: 20px;
+    font-style: oblique;
+}
+
+.movie-detail-overview {
+    padding: 50px 10px;
+    border-top: 1px solid white;
+}
+
+.movie-detail-third {
+    padding: 20px 10px;
+    border-top: 1px solid white;
+}
+
+.movie-detail-release {
+    font-size: 15px;
+    margin-bottom: 10px;
 }

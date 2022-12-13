@@ -6,11 +6,12 @@ const Navigation = () => {
     return (
         <Navbar className="nav-background" variant="dark" expand="lg">
             <Container fluid>
-                <Navbar.Brand href="#">
+                <Navbar.Brand>
+                    <Link to="/">
                     <img
                         width={100}
                         src="https://www.edigitalagency.com.au/wp-content/uploads/Netflix-logo-red-black-png.png"
-                    />
+                    /></Link>
                 </Navbar.Brand>
                 <Navbar.Toggle aria-controls="navbarScroll" />
                 <Navbar.Collapse id="navbarScroll">
