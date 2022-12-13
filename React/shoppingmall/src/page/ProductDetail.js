@@ -8,11 +8,10 @@ import { useDispatch, useSelector } from "react-redux";
 import { productAction } from "../redux/actions/productAction";
 
 const ProductDetail = () => {
-    const product = useSelector((state) => state.product.productDetail);
+    const product = useSelector((state) => state.product.selectedItem);
     let { id } = useParams();
     const dispatch = useDispatch;
     const getProductDetail = async () => {
-        console.log("getproductdetail");
         dispatch(productAction.getProductDetail(id));
     };
 
