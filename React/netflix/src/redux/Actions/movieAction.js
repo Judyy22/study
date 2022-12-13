@@ -1,5 +1,5 @@
 import api from "../api";
-import { movieActions } from "../reducers/movieReducer";
+import { movieReducers } from "../reducers/movieReducer";
 
 const API_KEY = process.env.REACT_APP_API_KEY;
 function getMovies() {
@@ -29,7 +29,6 @@ function getMovies() {
                     upComingApi,
                     genreApi,
                 ]);
-            console.log("장르 리스트?", genreList);
 
             dispatch({
                 type: "GET_MOVIES_SUCCESS",
@@ -46,5 +45,13 @@ function getMovies() {
         }
     };
 }
+
+// function getMovieDetail(id) {
+//     console.log("actionid", id);
+//     return async (dispatch) => {
+
+//         dispatch({ type: "GET_MOVIE_DETAIL", payload: { data } });
+//     };
+// }
 
 export const movieAction = { getMovies };
