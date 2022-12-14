@@ -1,6 +1,8 @@
 import React from "react";
 import { Navbar, Container, Form, Button, Nav } from "react-bootstrap";
 import { Link } from "react-router-dom";
+import { faMagnifyingGlass } from "@fortawesome/free-solid-svg-icons";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 
 const Navigation = () => {
     return (
@@ -8,10 +10,11 @@ const Navigation = () => {
             <Container fluid>
                 <Navbar.Brand>
                     <Link to="/">
-                    <img
-                        width={100}
-                        src="https://www.edigitalagency.com.au/wp-content/uploads/Netflix-logo-red-black-png.png"
-                    /></Link>
+                        <img
+                            width={100}
+                            src="https://www.edigitalagency.com.au/wp-content/uploads/Netflix-logo-red-black-png.png"
+                        />
+                    </Link>
                 </Navbar.Brand>
                 <Navbar.Toggle aria-controls="navbarScroll" />
                 <Navbar.Collapse id="navbarScroll">
@@ -35,7 +38,7 @@ const Navigation = () => {
                             aria-label="Search"
                         />
                         <Button className="button-color" variant="danger">
-                            Search
+                            <FontAwesomeIcon icon={faMagnifyingGlass} />
                         </Button>
                     </Form>
                 </Navbar.Collapse>

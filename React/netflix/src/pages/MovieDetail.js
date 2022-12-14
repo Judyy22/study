@@ -4,22 +4,45 @@ import { Badge } from "react-bootstrap";
 import "bootstrap/dist/css/bootstrap.min.css";
 import { faUsers } from "@fortawesome/free-solid-svg-icons";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { Review } from "../component/Review";
+import MovieReview from "../component/MovieReview";
+import RelatedMovie from "../component/RelatedMovie";
 
 const MovieDetail = () => {
     const API_KEY = process.env.REACT_APP_API_KEY;
     const [movie, setMovie] = useState(null);
+    const [review, setReview] = useState(null);
+    const [related, setRelated] = useState(null);
+    const [reviewActive, setReviewActive] = useState(true);
     const { id } = useParams();
+
     const getMovieDetails = async () => {
         let url = `https://api.themoviedb.org/3/movie/${id}?api_key=${API_KEY}&language=en-US`;
         let response = await fetch(url);
         let data = await response.json();
         setMovie(data);
-        console.log("data", data);
+        console.log("movieDetail", data);
+    };
+
+    const getMovieReview = async () => {
+        let url = `https://api.themoviedb.org/3/movie/${id}/reviews?api_key=${API_KEY}&language=en-US&page=1`;
+        let response = await fetch(url);
+        let data = await response.json();
+        setReview(data);
+        console.log("movieReview", data);
+    };
+
+    const getRelatedMovie = async () => {
+        let url = `https://api.themoviedb.org/3/movie/${id}/similar?api_key=${API_KEY}&language=en-US&page=1`;
+        let response = await fetch(url);
+        let data = await response.json();
+        setRelated(data);
+        console.log("RelatedMovie", data);
     };
 
     useEffect(() => {
         getMovieDetails();
+        getMovieReview();
+        getRelatedMovie();
     }, []);
 
     return (
@@ -61,7 +84,7 @@ const MovieDetail = () => {
                                 {movie?.popularity}
                             </span>
                             <span className="movie-detail-adulte">
-                                {movie?.adulte ? "청불" : "under 18"}
+                                {movie?.adulte ? "18+" : "under 18"}
                             </span>
                         </div>
                     </div>
@@ -69,6 +92,16 @@ const MovieDetail = () => {
                         {movie?.overview}
                     </div>
                     <div className="movie-detail-third">
+                        <div className="movie-detail-release">
+                            <Badge bg="danger" className="fontawesome">
+                                Language
+                            </Badge>
+                            {movie?.spoken_languages.map((language) => (
+                                <span className="movie-language">
+                                    {language.english_name}
+                                </span>
+                            ))}
+                        </div>
                         <div className="movie-detail-release">
                             <Badge bg="danger" className="fontawesome">
                                 Release Day
@@ -81,12 +114,48 @@ const MovieDetail = () => {
                             </Badge>
                             {movie?.runtime}
                         </div>
+                        <div className="movie-detail-release">
+                            <Badge bg="danger" className="fontawesome">
+                                budget
+                            </Badge>
+                            $ {movie?.budget}
+                        </div>
+                    </div>
+                    <div className="movie-detail-third">
+                        <span>
+                            <img src="img/banner/pro-details.jpg" alt="" />
+                        </span>
                     </div>
                 </div>
             </div>
             <div className="row">
-                <div className="col-4"></div>
-                <div className="col-8">RELATED MOVIES</div>
+                <div className="col">
+                    <button
+                        onClick={() => setReviewActive(!reviewActive)}
+                        className={
+                            reviewActive ? "reviewActive" : "reviewInactive"
+                        }
+                    >
+                        REVIEWS({review?.results.length})
+                    </button>
+                </div>
+                <div className="col">
+                    <button
+                        onClick={() => setReviewActive(!reviewActive)}
+                        className={
+                            reviewActive ? "reviewInactive" : "reviewActive"
+                        }
+                    >
+                        RELATED ({related?.results.length})
+                    </button>
+                </div>
+                <div>
+                    {reviewActive ? (
+                        <MovieReview review={review} />
+                    ) : (
+                        <RelatedMovie related={related} />
+                    )}
+                </div>
             </div>
         </div>
     );

@@ -30,6 +30,8 @@ function getMovies() {
                     genreApi,
                 ]);
 
+            console.log("장르아ㅓㅇ라ㅓㅇ", genreList);
+
             dispatch({
                 type: "GET_MOVIES_SUCCESS",
                 payload: {
