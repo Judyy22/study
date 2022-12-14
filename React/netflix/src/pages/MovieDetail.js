@@ -16,7 +16,7 @@ const MovieDetail = () => {
     const { id } = useParams();
 
     const getMovieDetails = async () => {
-        let url = `https://api.themoviedb.org/3/movie/${id}?api_key=${API_KEY}&language=en-US`;
+        let url = `https://api.themoviedb.org/3/movie/${id}?api_key=${API_KEY}&language=ko-KR`;
         let response = await fetch(url);
         let data = await response.json();
         setMovie(data);
@@ -32,7 +32,7 @@ const MovieDetail = () => {
     };
 
     const getRelatedMovie = async () => {
-        let url = `https://api.themoviedb.org/3/movie/${id}/similar?api_key=${API_KEY}&language=en-US&page=1`;
+        let url = `https://api.themoviedb.org/3/movie/${id}/similar?api_key=${API_KEY}&language=ko-KR&page=1`;
         let response = await fetch(url);
         let data = await response.json();
         setRelated(data);
@@ -66,9 +66,7 @@ const MovieDetail = () => {
                         ))}
                     </div>
                     <div className="movie-detail-first">
-                        <div className="movie-detail-title">
-                            {movie?.original_title}
-                        </div>
+                        <div className="movie-detail-title">{movie?.title}</div>
                         <div className="movie-detail-tagline">
                             {movie?.tagline}
                         </div>
@@ -84,7 +82,7 @@ const MovieDetail = () => {
                                 {movie?.popularity}
                             </span>
                             <span className="movie-detail-adulte">
-                                {movie?.adulte ? "18+" : "under 18"}
+                                {movie?.adulte ? "18+" : "18세 이하"}
                             </span>
                         </div>
                     </div>

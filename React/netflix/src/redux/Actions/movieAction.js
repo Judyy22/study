@@ -7,19 +7,19 @@ function getMovies() {
         try {
             dispatch({ type: "GET_MOVIES_REQUEST" });
             const populrMovieApi = api.get(
-                `/movie/popular?api_key=${API_KEY}&language=en-US&page=1`
+                `/movie/popular?api_key=${API_KEY}&language=ko-KR&page=1`
             );
 
             const topRateApi = api.get(
-                `/movie/top_rated?api_key=${API_KEY}&language=en-US&page=1`
+                `/movie/top_rated?api_key=${API_KEY}&language=ko-KR&page=1`
             );
 
             const upComingApi = api.get(
-                `/movie/upcoming?api_key=${API_KEY}&language=en-US&page=1`
+                `/movie/upcoming?api_key=${API_KEY}&language=ko-KR&page=1`
             );
 
             const genreApi = api.get(
-                `/genre/movie/list?api_key=${API_KEY}&language=en-US`
+                `/genre/movie/list?api_key=${API_KEY}&language=ko-KR`
             );
 
             let [popularMovies, topRatedMovies, upcomingMovies, genreList] =
