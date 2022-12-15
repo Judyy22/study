@@ -107,7 +107,7 @@ const MovieDetail = () => {
                                 {movie?.popularity}
                             </span>
                             <span className="movie-detail-adulte">
-                                {movie?.adulte ? "18+" : "18세 이하"}
+                                {movie?.adulte ? "18+" : "under 18"}
                             </span>
                         </div>
                     </div>

@@ -91,7 +91,7 @@ body {
     margin: 20px;
 }
 
-.home-card>h1 {
+.home-card > h1 {
     margin: 20px;
 }
 
@@ -216,7 +216,7 @@ body {
     padding: 15px;
 }
 
-.movie-review>h3 {
+.movie-review > h3 {
     margin-top: 10px;
 }
 
@@ -239,7 +239,7 @@ body {
     opacity: 1;
 }
 
-.rel-card-info>span {
+.rel-card-info > span {
     margin-right: 20px;
 }
 
@@ -274,7 +274,7 @@ body {
     padding: 10px 50px;
 }
 
-.trailer>div {
+.trailer > div {
     height: 100%;
 }
 
@@ -299,3 +299,44 @@ iframe {
 
 /* movieTrailer-end */
 /* movieDetail-end */
+/* movies-start */
+.col-sm-9 .row {
+    justify-content: center;
+}
+/* movieList-start */
+.listcard {
+    padding: 0;
+    margin: 10px;
+    height: 400px;
+    background-size: cover;
+    border-radius: 10px;
+}
+.listcard:hover {
+    transition: 0.5s;
+    transform: scale(1.2);
+    transition: all 0.4s;
+    z-index: 2;
+    border: 1px solid red;
+    box-shadow: 5px 5px 5px rgba(255, 0, 0, 0.5);
+}
+.card-back {
+    height: 400px;
+    content: "";
+    background: linear-gradient(to right, black 35%, transparent);
+    border-radius: 10px;
+}
+.listcard-poster {
+    height: 150px;
+    width: 100px;
+}
+.listcard-overview {
+    width: 80%;
+    white-space: normal;
+    display: -webkit-box;
+    -webkit-line-clamp: 4; /* 텍스트를 자를 때 원하는 단위 ex) 3줄 */
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+}
+.back-padding {
+    padding: 20px;
+}
