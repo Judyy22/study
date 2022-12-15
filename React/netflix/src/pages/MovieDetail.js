@@ -2,10 +2,16 @@ import React, { useEffect, useState } from "react";
 import { useParams } from "react-router-dom";
 import { Badge } from "react-bootstrap";
 import "bootstrap/dist/css/bootstrap.min.css";
-import { faUsers } from "@fortawesome/free-solid-svg-icons";
+import {
+    faUsers,
+    faTelevision,
+    faXmark,
+} from "@fortawesome/free-solid-svg-icons";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import MovieReview from "../component/MovieReview";
 import RelatedMovie from "../component/RelatedMovie";
+import Modal from "react-modal";
+import YouTube from "react-youtube";
 
 const MovieDetail = () => {
     const API_KEY = process.env.REACT_APP_API_KEY;
@@ -13,7 +19,16 @@ const MovieDetail = () => {
     const [review, setReview] = useState(null);
     const [related, setRelated] = useState(null);
     const [reviewActive, setReviewActive] = useState(true);
+    const [modalOpen, setModalOpen] = useState(false);
+    const [trailer, setTrailer] = useState(null);
     const { id } = useParams();
+
+    function showModal() {
+        setModalOpen(true);
+    }
+    function closeModal() {
+        setModalOpen(false);
+    }
 
     const getMovieDetails = async () => {
         let url = `https://api.themoviedb.org/3/movie/${id}?api_key=${API_KEY}&language=ko-KR`;
@@ -39,10 +54,20 @@ const MovieDetail = () => {
         console.log("RelatedMovie", data);
     };
 
+    const getTrailer = async () => {
+        let url = `https://api.themoviedb.org/3/movie/${id}/videos?api_key=${API_KEY}&language=en-US`;
+        let response = await fetch(url);
+        let data = await response.json();
+        setTrailer(data.results[0]);
+        console.log("Trailerdata", data);
+        console.log("key", data.results[0].key);
+    };
+
     useEffect(() => {
         getMovieDetails();
         getMovieReview();
         getRelatedMovie();
+        getTrailer();
     }, []);
 
     return (
@@ -121,7 +146,38 @@ const MovieDetail = () => {
                     </div>
                     <div className="movie-detail-third">
                         <span>
-                            <img src="img/banner/pro-details.jpg" alt="" />
+                            <button
+                                onClick={showModal}
+                                className="movie-detail-trailer"
+                            >
+                                <FontAwesomeIcon
+                                    icon={faTelevision}
+                                    className="fontawesome"
+                                />
+                                Watch Trailer
+                            </button>
+                            <Modal
+                                isOpen={modalOpen}
+                                style={{
+                                    content: {
+                                        backgroundColor: "#000",
+                                        padding: "0",
+                                    },
+                                }}
+                            >
+                                <div className="closeposition">
+                                    <button
+                                        onClick={closeModal}
+                                        className="modalclose"
+                                    >
+                                        <FontAwesomeIcon icon={faXmark} />
+                                    </button>
+                                </div>
+
+                                <div className="trailer">
+                                    <YouTube videoId={trailer?.key} autoplay />
+                                </div>
+                            </Modal>
                         </span>
                     </div>
                 </div>

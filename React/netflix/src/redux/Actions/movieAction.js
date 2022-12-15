@@ -19,7 +19,7 @@ function getMovies() {
             );
 
             const genreApi = api.get(
-                `/genre/movie/list?api_key=${API_KEY}&language=ko-KR`
+                `/genre/movie/list?api_key=${API_KEY}&language=en-US`
             );
 
             let [popularMovies, topRatedMovies, upcomingMovies, genreList] =

@@ -22,19 +22,24 @@ const RelatedSlider = ({ movie }) => {
                 }}
             >
                 <div className="overlay">
-                    <h1>{movie.title}</h1>
-                    <div>
-                        {movie.genre_ids.map((id) => (
-                            <Badge bg="danger" className="badge">
-                                {genreList.find((item) => item.id == id).name}
-                            </Badge>
-                        ))}
-                    </div>
-                    <div className="rel-card-info">
-                        <span>⭐{movie.vote_average}</span>
-                        <span className="rel-card-adulte">
-                            {movie.adulte ? "18+" : "under 18"}
-                        </span>
+                    <div className="overlay-position">
+                        <h1>{movie.title}</h1>
+                        <div>
+                            {movie.genre_ids.map((id) => (
+                                <Badge bg="danger" className="badge">
+                                    {
+                                        genreList.find((item) => item.id == id)
+                                            .name
+                                    }
+                                </Badge>
+                            ))}
+                        </div>
+                        <div className="rel-card-info">
+                            <span>⭐{movie.vote_average}</span>
+                            <span className="rel-card-adulte">
+                                {movie.adulte ? "18+" : "under 18"}
+                            </span>
+                        </div>
                     </div>
                 </div>
             </div>

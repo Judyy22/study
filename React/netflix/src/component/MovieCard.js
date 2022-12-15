@@ -21,19 +21,21 @@ const MovieCard = ({ item }) => {
             }}
         >
             <div className="overlay">
-                <h1>{item.title}</h1>
-                <div>
-                    {item.genre_ids.map((id) => (
-                        <Badge bg="danger" className="badge">
-                            {genreList.find((item) => item.id == id).name}
-                        </Badge>
-                    ))}
-                </div>
-                <div className="rel-card-info">
-                    <span>⭐{item.vote_average}</span>
-                    <span className="rel-card-adulte">
-                        {item.adulte ? "18+" : "under 18"}
-                    </span>
+                <div className="overlay-position">
+                    <h1>{item.title}</h1>
+                    <div>
+                        {item.genre_ids.map((id) => (
+                            <Badge bg="danger" className="badge">
+                                {genreList.find((item) => item.id == id).name}
+                            </Badge>
+                        ))}
+                    </div>
+                    <div className="rel-card-info">
+                        <span>⭐{item.vote_average}</span>
+                        <span className="rel-card-adulte">
+                            {item.adulte ? "18+" : "under 18"}
+                        </span>
+                    </div>
                 </div>
             </div>
         </div>
