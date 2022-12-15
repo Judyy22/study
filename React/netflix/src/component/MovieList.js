@@ -1,5 +1,5 @@
 import React from "react";
-import { Badge, Container, Row, Col } from "react-bootstrap";
+import { Badge } from "react-bootstrap";
 import { useSelector } from "react-redux";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faUsers } from "@fortawesome/free-solid-svg-icons";
@@ -17,35 +17,34 @@ const MovieList = ({ item }) => {
                     ")",
             }}
         >
-            <div className="card-back back-padding">
-                <div>
-                    <img
-                        className="listcard-poster"
-                        src={`https://image.tmdb.org/t/p/original/${item?.poster_path}`}
-                    />
+            <div className="listcard-view">
+                <img
+                    className="listcard-poster"
+                    src={`https://image.tmdb.org/t/p/original/${item?.poster_path}`}
+                />
+                <button>More Details</button>
+                <div className="listcard-title">
                     <h2>{item?.original_title}</h2>
-                </div>
-                <div>
                     {item?.genre_ids.map((id) => (
                         <Badge bg="danger" className="listcard-badge">
                             {genreList.find((item) => item.id == id).name}
                         </Badge>
                     ))}
-                </div>
-                <div>
-                    <span className="listcard-vote">
-                        ⭐{item?.vote_average}
-                    </span>
-                    <span className="listcard-popularity">
-                        <FontAwesomeIcon
-                            icon={faUsers}
-                            className="listcard-fontawesome"
-                        />
-                        {item?.popularity}
-                    </span>
-                    <span className="listcard-adulte">
-                        {item?.adulte ? "18+" : "under 18"}
-                    </span>
+                    <div>
+                        <span className="listcard-vote">
+                            ⭐{item?.vote_average}
+                        </span>
+                        <span className="listcard-popularity">
+                            <FontAwesomeIcon
+                                icon={faUsers}
+                                className="listcard-fontawesome"
+                            />
+                            {item?.popularity}
+                        </span>
+                        <span className="listcard-adulte">
+                            {item?.adulte ? "18+" : "under 18"}
+                        </span>
+                    </div>
                 </div>
                 <div className="listcard-overview">{item?.overview}</div>
             </div>

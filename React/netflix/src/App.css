@@ -243,7 +243,8 @@ body {
     margin-right: 20px;
 }
 
-.rel-card-adulte {
+.rel-card-adulte,
+.listcard-adulte {
     color: #ff3636;
     font-weight: bold;
     font-style: oblique;
@@ -312,31 +313,85 @@ iframe {
     border-radius: 10px;
 }
 .listcard:hover {
-    transition: 0.5s;
     transform: scale(1.2);
-    transition: all 0.4s;
+    transition: all 1s;
     z-index: 2;
     border: 1px solid red;
     box-shadow: 5px 5px 5px rgba(255, 0, 0, 0.5);
 }
-.card-back {
-    height: 400px;
-    content: "";
-    background: linear-gradient(to right, black 35%, transparent);
-    border-radius: 10px;
-}
 .listcard-poster {
-    height: 150px;
     width: 100px;
+    height: 150px;
+    opacity: 0;
 }
+.listcard:hover .listcard-poster {
+    opacity: 1;
+    transition: all 1s linear;
+}
+
+.listcard-view {
+    background: rgba(43, 41, 41, 0.6);
+    border-radius: 10px 10px 0px 0px;
+    height: 140px;
+    padding: 20px;
+}
+
+.listcard-view > button {
+    opacity: 0;
+}
+
+.listcard:hover .listcard-view > button {
+    opacity: 1;
+    background-color: red;
+    border: none;
+    color: white;
+    display: flex;
+    justify-content: flex-end;
+}
+
+.listcard:hover .listcard-view {
+    border-radius: 10px;
+    height: 400px;
+    transition: all 1s linear;
+}
+
+.listcard-title {
+    position: relative;
+    top: -140px;
+}
+
+.listcard:hover .listcard-title {
+    transform: translateY(140px);
+    transition-duration: 1s;
+    overflow: show;
+    margin: 10px 0px;
+}
+
+.listcard-title > h2 {
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+.listcard:hover .listcard-title > h2 {
+    white-space: inherit;
+    display: block;
+    overflow: show;
+}
+
 .listcard-overview {
-    width: 80%;
     white-space: normal;
     display: -webkit-box;
-    -webkit-line-clamp: 4; /* 텍스트를 자를 때 원하는 단위 ex) 3줄 */
+    -webkit-line-clamp: 2;
     -webkit-box-orient: vertical;
     overflow: hidden;
+    opacity: 0;
 }
-.back-padding {
-    padding: 20px;
+.listcard:hover .listcard-overview {
+    opacity: 1;
+    transition: all 1s linear;
+    transition-delay: 0.5s;
+}
+.listcard-vote,
+.listcard-popularity {
+    margin-right: 10px;
 }
