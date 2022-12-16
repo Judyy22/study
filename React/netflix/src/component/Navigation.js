@@ -1,10 +1,31 @@
-import React from "react";
+import React, { useState } from "react";
 import { Navbar, Container, Form, Button, Nav } from "react-bootstrap";
-import { Link } from "react-router-dom";
+import { Link, useHistory } from "react-router-dom";
 import { faMagnifyingGlass } from "@fortawesome/free-solid-svg-icons";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import { useDispatch, useSelector } from "react-redux";
+import { movieAction } from "../redux/Actions/movieAction";
 
 const Navigation = () => {
+    const dispatch = useDispatch();
+    const [search, setSearch] = useState();
+    const { searchMovie } = useSelector((state) => state.movie);
+    console.log("searchMovieeeeeeeee", searchMovie);
+
+    const getSearch = (event) => {
+        event.preventDefault();
+        setSearch(event.target.value);
+    };
+
+    console.log("search???", search);
+    const searchClick = (e) => {
+        e.preventDefault();
+        if (search != "") {
+            dispatch(movieAction.getSearchMovie(search));
+        } else {
+            dispatch(movieAction.getMovies);
+        }
+    };
     return (
         <Navbar className="nav-background" variant="dark" expand="lg">
             <Container fluid>
@@ -32,12 +53,16 @@ const Navigation = () => {
                     </Nav>
                     <Form className="d-flex">
                         <Form.Control
+                            onChange={getSearch}
                             type="search"
                             placeholder="Search"
                             className="me-2"
-                            aria-label="Search"
                         />
-                        <Button className="button-color" variant="danger">
+                        <Button
+                            className="button-color"
+                            variant="danger"
+                            onClick={searchClick}
+                        >
                             <FontAwesomeIcon icon={faMagnifyingGlass} />
                         </Button>
                     </Form>

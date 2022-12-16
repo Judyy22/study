@@ -23,6 +23,7 @@ const responsive = {
     },
 };
 const MovieSlide = ({ movies }) => {
+    console.log("slidemovieeeeessss", movies.results);
     return (
         <div>
             <Carousel responsive={responsive}>

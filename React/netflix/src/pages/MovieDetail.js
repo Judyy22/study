@@ -12,16 +12,27 @@ import MovieReview from "../component/MovieReview";
 import RelatedMovie from "../component/RelatedMovie";
 import Modal from "react-modal";
 import YouTube from "react-youtube";
+import { useDispatch, useSelector } from "react-redux";
+import { movieAction } from "../redux/Actions/movieAction";
 
 const MovieDetail = () => {
-    const API_KEY = process.env.REACT_APP_API_KEY;
-    const [movie, setMovie] = useState(null);
-    const [review, setReview] = useState(null);
-    const [related, setRelated] = useState(null);
+    const dispatch = useDispatch();
     const [reviewActive, setReviewActive] = useState(true);
     const [modalOpen, setModalOpen] = useState(false);
-    const [trailer, setTrailer] = useState(null);
     const { id } = useParams();
+
+    const { movieDetail, movieReviews, relatedMovie, movieTrailer } =
+        useSelector((state) => state.movie);
+    const movie = movieDetail;
+    const review = movieReviews;
+    const related = relatedMovie;
+    const trailer = movieTrailer;
+    console.log("디테일이다아", movie);
+    console.log("리뷰유유유유", review);
+    console.log("유사영화아ㅏㅏㅏ", related);
+    console.log("트레일러어어어어어", trailer);
+
+    review?.results.map((movie) => console.log("djkadjkls", movie.id));
 
     function showModal() {
         setModalOpen(true);
@@ -31,43 +42,11 @@ const MovieDetail = () => {
     }
 
     const getMovieDetails = async () => {
-        let url = `https://api.themoviedb.org/3/movie/${id}?api_key=${API_KEY}&language=ko-KR`;
-        let response = await fetch(url);
-        let data = await response.json();
-        setMovie(data);
-        console.log("movieDetail", data);
-    };
-
-    const getMovieReview = async () => {
-        let url = `https://api.themoviedb.org/3/movie/${id}/reviews?api_key=${API_KEY}&language=en-US&page=1`;
-        let response = await fetch(url);
-        let data = await response.json();
-        setReview(data);
-        console.log("movieReview", data);
-    };
-
-    const getRelatedMovie = async () => {
-        let url = `https://api.themoviedb.org/3/movie/${id}/similar?api_key=${API_KEY}&language=ko-KR&page=1`;
-        let response = await fetch(url);
-        let data = await response.json();
-        setRelated(data);
-        console.log("RelatedMovie", data);
-    };
-
-    const getTrailer = async () => {
-        let url = `https://api.themoviedb.org/3/movie/${id}/videos?api_key=${API_KEY}&language=en-US`;
-        let response = await fetch(url);
-        let data = await response.json();
-        setTrailer(data.results[0]);
-        console.log("Trailerdata", data);
-        console.log("key", data.results[0].key);
+        dispatch(movieAction.getMovieDetails(id));
     };
 
     useEffect(() => {
         getMovieDetails();
-        getMovieReview();
-        getRelatedMovie();
-        getTrailer();
     }, []);
 
     return (

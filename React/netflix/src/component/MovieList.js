@@ -7,9 +7,14 @@ import { useNavigate } from "react-router-dom";
 
 const MovieList = ({ item }) => {
     const { genreList } = useSelector((state) => state.movie);
+    const navigate = useNavigate();
+    const showMovieDetail = (id) => {
+        navigate(`/movies/${id}`);
+    };
     return (
         <div
             className="col-sm-5 listcard"
+            onClick={() => showMovieDetail(item.id)}
             style={{
                 backgroundImage:
                     "url(" +
@@ -22,7 +27,6 @@ const MovieList = ({ item }) => {
                     className="listcard-poster"
                     src={`https://image.tmdb.org/t/p/original/${item?.poster_path}`}
                 />
-                <button>More Details</button>
                 <div className="listcard-title">
                     <h2>{item?.original_title}</h2>
                     {item?.genre_ids.map((id) => (
