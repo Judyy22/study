@@ -88,7 +88,7 @@ body {
     margin: 20px;
 }
 
-.home-card>h1 {
+.home-card > h1 {
     margin: 20px;
 }
 
@@ -213,7 +213,7 @@ body {
     padding: 15px;
 }
 
-.movie-review>h3 {
+.movie-review > h3 {
     margin-top: 10px;
 }
 
@@ -236,7 +236,7 @@ body {
     opacity: 1;
 }
 
-.rel-card-info>span {
+.rel-card-info > span {
     margin-right: 20px;
 }
 
@@ -272,7 +272,7 @@ body {
     padding: 10px 50px;
 }
 
-.trailer>div {
+.trailer > div {
     height: 100%;
 }
 
@@ -328,7 +328,7 @@ iframe {
 
 .listcard:hover .listcard-poster {
     opacity: 1;
-    transition: all 1s linear;
+    transition: all 0.5s linear;
 }
 
 .listcard-view {
@@ -346,7 +346,7 @@ iframe {
 .listcard:hover .listcard-view {
     border-radius: 10px;
     height: 400px;
-    transition: all 1s linear;
+    transition: all 0.5s linear;
 }
 
 .listcard-title {
@@ -356,18 +356,18 @@ iframe {
 
 .listcard:hover .listcard-title {
     transform: translateY(140px);
-    transition-duration: 1s;
+    transition-duration: 0.5s;
     overflow: show;
     margin: 10px 0px;
 }
 
-.listcard-title>h2 {
+.listcard-title > h2 {
     white-space: nowrap;
     overflow: hidden;
     text-overflow: ellipsis;
 }
 
-.listcard:hover .listcard-title>h2 {
+.listcard:hover .listcard-title > h2 {
     white-space: inherit;
     display: block;
     overflow: show;
@@ -384,8 +384,8 @@ iframe {
 
 .listcard:hover .listcard-overview {
     opacity: 1;
-    transition: all 1s linear;
-    transition-delay: 0.5s;
+    transition: all 0.5s linear;
+    transition-delay: 0.3s;
 }
 
 .listcard-vote,

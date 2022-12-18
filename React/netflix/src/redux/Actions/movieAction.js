@@ -64,7 +64,7 @@ function getMovieDetails(id) {
                 `/movie/${id}?api_key=${API_KEY}&language=en-US`
             );
             const movieReviewApi = api.get(
-                `/movie/${id}/similar?api_key=${API_KEY}&language=en-US&page=1`
+                `/movie/${id}/reviews?api_key=${API_KEY}&language=en-US&page=1`
             );
             const relatedMovieApi = api.get(
                 `/movie/${id}/similar?api_key=${API_KEY}&language=en-US&page=1`

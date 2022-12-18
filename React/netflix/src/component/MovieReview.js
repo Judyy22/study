@@ -6,7 +6,14 @@ const MovieReview = ({ review }) => {
     return (
         <div>
             <div className="review-box">
-                {review?.results.map((movie) => console.log("dddd", movie.id))}
+                {review?.results.map((movie) => {
+                    return (
+                        <div>
+                            <div>{movie.author}</div>
+                            <div>{movie.content}</div>
+                        </div>
+                    );
+                })}
             </div>
         </div>
     );
