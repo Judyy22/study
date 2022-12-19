@@ -5,23 +5,19 @@ import "bootstrap/dist/css/bootstrap.min.css";
 import { useDispatch, useSelector } from "react-redux";
 import { movieAction } from "../redux/Actions/movieAction";
 import Page from "../component/Page";
-import { useNavigate } from "react-router-dom";
 
 const Movies = () => {
     const dispatch = useDispatch();
-    const navigateState = useNavigate.state;
-    const { nowPlaymovies } = useSelector((state) => state.movie);
     const [limit, setLimit] = useState(20);
     const [page, setPage] = useState(1);
-    const [serachMovie, setSearchMovie] = useState(
-        navigateState && navigateState.serachMovie
-    );
 
-    console.log("뭐가 왔나?", navigateState);
+    console.log("이게 되나?", searchMovie);
+    console.log("어........", nowPlaymovies);
 
     useEffect(() => {
         dispatch(movieAction.getMovies(page));
-    }, [page]);
+    }, [keyword[0]]);
+
     return (
         <div className="container">
             <div className="row">

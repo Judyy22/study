@@ -29,7 +29,7 @@ const MovieDetail = () => {
         relatedMovie,
         movieTrailer,
     ];
-
+    console.log("ddddddddd", movieTrailer.results[0].key);
     function showModal() {
         setModalOpen(true);
     }
@@ -150,7 +150,10 @@ const MovieDetail = () => {
                                 </div>
 
                                 <div className="trailer">
-                                    <YouTube videoId={trailer?.key} autoplay />
+                                    <YouTube
+                                        videoId={movieTrailer?.results[0].key}
+                                        autoplay
+                                    />
                                 </div>
                             </Modal>
                         </span>

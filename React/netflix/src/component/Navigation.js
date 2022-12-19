@@ -10,7 +10,7 @@ const Navigation = () => {
     const dispatch = useDispatch();
     const navigate = useNavigate();
     const [search, setSearch] = useState();
-    const { searchMovie } = useSelector((state) => state.movie);
+    // const { searchMovie } = useSelector((state) => state.movie);
 
     const getkeyword = (event) => {
         event.preventDefault();
@@ -18,14 +18,15 @@ const Navigation = () => {
     };
 
     console.log("search???", search);
-    console.log("가꼬왔나?", searchMovie);
+    // console.log("가꼬왔나?", searchMovie);
     const searchClick = (e) => {
         e.preventDefault();
         if (search != "") {
             dispatch(movieAction.getSearchMovie(search));
-            navigate("/movies", { state: { searchMovie: searchMovie } });
+            navigate("/movies");
         } else {
-            dispatch(movieAction.getMovies);
+            setSearch("");
+            dispatch(movieAction.getSearchMovie(search));
             navigate("/movies");
         }
     };
