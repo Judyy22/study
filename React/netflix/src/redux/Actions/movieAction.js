@@ -1,8 +1,7 @@
 import api from "../api";
-import { movieReducers } from "../reducers/movieReducer";
 
 const API_KEY = process.env.REACT_APP_API_KEY;
-function getMovies() {
+function getMovies(page) {
     return async (dispatch) => {
         try {
             dispatch({ type: "GET_MOVIES_REQUEST" });
@@ -22,7 +21,7 @@ function getMovies() {
                 `/genre/movie/list?api_key=${API_KEY}&language=en-US`
             );
             const nowPlayingApi = api.get(
-                `/movie/now_playing?api_key=${API_KEY}&language=en-US&page=1`
+                `/movie/now_playing?api_key=${API_KEY}&language=en-US&page=${page}`
             );
 
             let [
@@ -64,10 +63,10 @@ function getMovieDetails(id) {
                 `/movie/${id}?api_key=${API_KEY}&language=en-US`
             );
             const movieReviewApi = api.get(
-                `/movie/${id}/reviews?api_key=${API_KEY}&language=en-US&page=1`
+                `/movie/${id}/reviews?api_key=${API_KEY}&language=en-US`
             );
             const relatedMovieApi = api.get(
-                `/movie/${id}/similar?api_key=${API_KEY}&language=en-US&page=1`
+                `/movie/${id}/similar?api_key=${API_KEY}&language=en-US`
             );
             const movieTrailerApi = api.get(
                 `/movie/${id}/videos?api_key=${API_KEY}&language=en-US`

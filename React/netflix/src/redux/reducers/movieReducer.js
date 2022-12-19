@@ -8,6 +8,7 @@ let initialState = {
     movieReviews: null,
     relatedMovie: null,
     movieTrailer: null,
+    searchMovie: null,
 };
 
 function movieReducer(state = initialState, action) {
@@ -35,6 +36,8 @@ function movieReducer(state = initialState, action) {
                 relatedMovie: payload.relatedMovie,
                 movieTrailer: payload.movieTrailer,
             };
+        case "GET_SEARCH_SUCCESS":
+            return { ...state, searchMovie: payload.searchMovie };
         default:
             return { ...state };
     }

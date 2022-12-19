@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 import { Navbar, Container, Form, Button, Nav } from "react-bootstrap";
-import { Link, useHistory } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 import { faMagnifyingGlass } from "@fortawesome/free-solid-svg-icons";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { useDispatch, useSelector } from "react-redux";
@@ -8,22 +8,25 @@ import { movieAction } from "../redux/Actions/movieAction";
 
 const Navigation = () => {
     const dispatch = useDispatch();
+    const navigate = useNavigate();
     const [search, setSearch] = useState();
     const { searchMovie } = useSelector((state) => state.movie);
-    console.log("searchMovieeeeeeeee", searchMovie);
 
-    const getSearch = (event) => {
+    const getkeyword = (event) => {
         event.preventDefault();
         setSearch(event.target.value);
     };
 
     console.log("search???", search);
+    console.log("가꼬왔나?", searchMovie);
     const searchClick = (e) => {
         e.preventDefault();
         if (search != "") {
             dispatch(movieAction.getSearchMovie(search));
+            navigate("/movies", { state: { searchMovie: searchMovie } });
         } else {
             dispatch(movieAction.getMovies);
+            navigate("/movies");
         }
     };
     return (
@@ -53,7 +56,7 @@ const Navigation = () => {
                     </Nav>
                     <Form className="d-flex">
                         <Form.Control
-                            onChange={getSearch}
+                            onChange={getkeyword}
                             type="search"
                             placeholder="Search"
                             className="me-2"

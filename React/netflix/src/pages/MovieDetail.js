@@ -23,16 +23,12 @@ const MovieDetail = () => {
 
     const { movieDetail, movieReviews, relatedMovie, movieTrailer } =
         useSelector((state) => state.movie);
-    const movie = movieDetail;
-    const review = movieReviews;
-    const related = relatedMovie;
-    const trailer = movieTrailer;
-    console.log("디테일이다아", movie);
-    console.log("리뷰유유유유", review);
-    console.log("유사영화아ㅏㅏㅏ", related);
-    console.log("트레일러어어어어어", trailer);
-
-    review?.results.map((movie) => console.log("djkadjkls", movie.id));
+    const [movie, review, related, trailer] = [
+        movieDetail,
+        movieReviews,
+        relatedMovie,
+        movieTrailer,
+    ];
 
     function showModal() {
         setModalOpen(true);

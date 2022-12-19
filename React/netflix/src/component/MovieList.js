@@ -1,4 +1,5 @@
 import React from "react";
+import { useState } from "react";
 import { Badge } from "react-bootstrap";
 import { useSelector } from "react-redux";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
@@ -11,6 +12,7 @@ const MovieList = ({ item }) => {
     const showMovieDetail = (id) => {
         navigate(`/movies/${id}`);
     };
+
     return (
         <div
             className="col-sm-5 listcard"
