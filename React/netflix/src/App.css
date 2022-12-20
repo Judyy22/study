@@ -37,6 +37,16 @@ body {
     background-color: #ff3636;
 }
 
+.disable {
+    color: gray;
+    text-decoration: none;
+    margin-right: 20px;
+}
+
+.disable:hover {
+    color: gray;
+}
+
 /* navigation-end */
 
 /* banner - start */
@@ -59,7 +69,7 @@ body {
     color: white;
     width: 40%;
     margin-left: 40px;
-    z-index: 1;
+    z-index: 2;
 }
 
 /* banner - end */
@@ -252,11 +262,23 @@ body {
 }
 
 /* RelatedSlider-end */
+/* like movie */
+.likeArea {
+    background: none;
+    color: white;
+    font-size: 40px;
+    padding-right: 20px;
+}
+
+.like {
+    color: red;
+}
+
 /* movieTrailer-start */
 .movie-detail-trailer {
     color: white;
     font-weight: bold;
-    font-size: 15px;
+    font-size: 17px;
     background: none;
 }
 
@@ -418,4 +440,60 @@ iframe {
 .page>button:active,
 .page>button:focus {
     background-color: red;
+}
+
+/* login modal */
+.loginArea {
+    text-align: center;
+}
+
+.IDPW {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.textArea {
+    margin-bottom: 30px;
+    background: none;
+    border: 1px solid white;
+    border-radius: 5px;
+    width: 50%;
+    height: 40px;
+    padding: 8px;
+    caret-color: white;
+}
+
+.textArea::placeholder {
+    color: white;
+    font-weight: bold;
+    opacity: 50%;
+}
+
+.buttonArea {
+    margin-right: 15px;
+    background: none;
+    border: 1px solid white;
+    color: white;
+}
+
+.buttonArea:hover {
+    background-color: red;
+}
+
+/* header css */
+.header {
+    background: linear-gradient(45deg, #B70000 12%, transparent 0, transparent 88%, #B70000 0),
+        linear-gradient(135deg, transparent 37%, red 0, red 63%, transparent 0),
+        linear-gradient(45deg, transparent 37%, #B70000 0, #B70000 63%, transparent 0) black;
+    background-size: 25px 25px;
+}
+
+.header>div {
+    display: flex;
+    justify-content: center;
+    width: 100%;
+    padding: 30px;
+    font-size: 50px;
+    text-shadow: 2px 2px 6px black;
 }

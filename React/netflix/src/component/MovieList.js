@@ -15,7 +15,7 @@ const MovieList = ({ item }) => {
 
     return (
         <div
-            className="col-sm-5 listcard"
+            className="col-sm-3 listcard"
             onClick={() => showMovieDetail(item.id)}
             style={{
                 backgroundImage:

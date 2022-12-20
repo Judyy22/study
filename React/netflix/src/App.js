@@ -5,6 +5,8 @@ import Home from "./pages/Home";
 import Movies from "./pages/Movies";
 import MovieDetail from "./pages/MovieDetail";
 import Navigation from "./component/Navigation";
+import Like from "./pages/Like";
+import Board from "./pages/Board";
 
 // 1. 3개 페이지 필요 ( 홈페이지, movie, movieDetail)
 // 2. 홈페이지에서 배너를 볼 수 있다.
@@ -29,6 +31,8 @@ function App() {
                 <Route path="/" element={<Home />}></Route>
                 <Route path="/movies" element={<Movies />}></Route>
                 <Route path="/movies/:id" element={<MovieDetail />}></Route>
+                <Route path="/board" element={<Board />}></Route>
+                <Route path="/like" element={<Like />}></Route>
             </Routes>
         </div>
     );

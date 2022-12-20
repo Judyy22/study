@@ -3,30 +3,26 @@ import { Navbar, Container, Form, Button, Nav } from "react-bootstrap";
 import { Link, useNavigate } from "react-router-dom";
 import { faMagnifyingGlass } from "@fortawesome/free-solid-svg-icons";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { useDispatch, useSelector } from "react-redux";
+import { useDispatch } from "react-redux";
 import { movieAction } from "../redux/Actions/movieAction";
 
 const Navigation = () => {
     const dispatch = useDispatch();
     const navigate = useNavigate();
     const [search, setSearch] = useState();
-    // const { searchMovie } = useSelector((state) => state.movie);
 
     const getkeyword = (event) => {
         event.preventDefault();
         setSearch(event.target.value);
     };
 
-    console.log("search???", search);
-    // console.log("가꼬왔나?", searchMovie);
     const searchClick = (e) => {
         e.preventDefault();
         if (search != "") {
             dispatch(movieAction.getSearchMovie(search));
-            navigate("/movies");
+            navigate("/movies", { state: { search: search } });
         } else {
-            setSearch("");
-            dispatch(movieAction.getSearchMovie(search));
+            dispatch(movieAction.getMovies());
             navigate("/movies");
         }
     };
@@ -54,7 +50,18 @@ const Navigation = () => {
                         <Link to="/movies" className="nav-tiem">
                             Movies
                         </Link>
+                        <Link to="/board" className="nav-tiem">
+                            Board
+                        </Link>
+                        <Link
+                            to="/like"
+                            disabled="disabled"
+                            className="disable"
+                        >
+                            My Favorite
+                        </Link>
                     </Nav>
+
                     <Form className="d-flex">
                         <Form.Control
                             onChange={getkeyword}
