@@ -1,8 +1,20 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
+import { useSelector } from "react-redux";
+import BoardItem from "./BoardItem";
 
 const BoardList = () => {
-    const [name, setName] = useState("");
-    return <div>BoardList</div>;
+    const { boardList } = useSelector((state) => state.board);
+
+    return (
+        <div>
+            <div>
+                <BoardItem />
+                {boardList.map((item) => (
+                    <BoardItem item={item} />
+                ))}
+            </div>
+        </div>
+    );
 };
 
 export default BoardList;

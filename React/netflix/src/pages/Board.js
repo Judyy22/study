@@ -6,8 +6,8 @@ import Header from "../component/Header";
 const Board = () => {
     return (
         <div>
-            <div>
-                <Header item={"한줄평 쓰기"} />
+            <Header item={"한줄평 쓰기"} />
+            <div className="container">
                 <BoardWrite />
                 <BoardList />
             </div>

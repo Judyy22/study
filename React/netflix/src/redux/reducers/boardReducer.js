@@ -1,14 +1,15 @@
 const initialState = {
-    contact: [],
+    boardList: [],
     keyword: "",
 };
 const boardReducer = (state = initialState, action) => {
     let { type, payload } = action;
     switch (type) {
         case "ADD_CONTACT":
-            state.contact.push({
+            state.boardList.push({
                 name: payload.name,
-                phoneNumber: payload.phoneNumber,
+                content: payload.content,
+                movieTitle: payload.movieTitle,
             });
             break;
         case "SEARCH_BY_USERNAME":
