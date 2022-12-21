@@ -7,12 +7,11 @@ const BoardList = () => {
 
     return (
         <div>
-            <div>
-                <BoardItem />
-                {boardList.map((item) => (
+            {boardList.map((item) => (
+                <div className="boardlistbox">
                     <BoardItem item={item} />
-                ))}
-            </div>
+                </div>
+            ))}
         </div>
     );
 };

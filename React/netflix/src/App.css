@@ -98,7 +98,7 @@ body {
     margin: 20px;
 }
 
-.home-card > h1 {
+.home-card>h1 {
     margin: 20px;
 }
 
@@ -223,7 +223,7 @@ body {
     padding: 15px;
 }
 
-.movie-review > h3 {
+.movie-review>h3 {
     margin-top: 10px;
 }
 
@@ -246,7 +246,7 @@ body {
     opacity: 1;
 }
 
-.rel-card-info > span {
+.rel-card-info>span {
     margin-right: 20px;
 }
 
@@ -294,7 +294,7 @@ body {
     padding: 10px 50px;
 }
 
-.trailer > div {
+.trailer>div {
     height: 100%;
 }
 
@@ -383,13 +383,13 @@ iframe {
     margin: 10px 0px;
 }
 
-.listcard-title > h2 {
+.listcard-title>h2 {
     white-space: nowrap;
     overflow: hidden;
     text-overflow: ellipsis;
 }
 
-.listcard:hover .listcard-title > h2 {
+.listcard:hover .listcard-title>h2 {
     white-space: inherit;
     display: block;
     overflow: show;
@@ -422,7 +422,7 @@ iframe {
     margin: 30px 0px;
 }
 
-.page > button {
+.page>button {
     color: white;
     background: none;
     margin: 2px;
@@ -433,12 +433,12 @@ iframe {
     border: none;
 }
 
-.page > button:hover {
+.page>button:hover {
     background-color: red;
 }
 
-.page > button:active,
-.page > button:focus {
+.page>button:active,
+.page>button:focus {
     background-color: red;
 }
 
@@ -483,26 +483,21 @@ iframe {
 
 /* header css */
 .header {
-    background: linear-gradient(
-            45deg,
+    background: linear-gradient(45deg,
             #b70000 12%,
             transparent 0,
             transparent 88%,
-            #b70000 0
-        ),
+            #b70000 0),
         linear-gradient(135deg, transparent 37%, red 0, red 63%, transparent 0),
-        linear-gradient(
-                45deg,
-                transparent 37%,
-                #b70000 0,
-                #b70000 63%,
-                transparent 0
-            )
-            black;
+        linear-gradient(45deg,
+            transparent 37%,
+            #b70000 0,
+            #b70000 63%,
+            transparent 0) black;
     background-size: 25px 25px;
 }
 
-.header > div {
+.header>div {
     display: flex;
     justify-content: center;
     width: 100%;
@@ -512,52 +507,133 @@ iframe {
     font-weight: bold;
 }
 
+/* board */
 .boardinputArea {
+    margin-top: 30px;
     display: flex;
     justify-content: space-around;
     align-items: center;
-    margin-top: 30px;
-    margin-bottom: 30px;
-}
-.boardinputArea > div {
-    margin: 0px 10px;
-    width: 8%;
-    font-size: 20px;
-    text-align: center;
-}
-.boardinputArea > input {
-    height: 30px;
-    margin-right: 10px;
-    background: none;
-    border: 1px solid white;
-    border-radius: 3px;
-    color: white;
-    padding: 10px;
 }
 
-.boardinputArea > textarea {
-    width: 50%;
-    height: 60px;
-    margin-right: 10px;
-    background: none;
-    border: 1px solid white;
-    border-radius: 3px;
-    color: white;
-    padding: 10px;
+.boardwrite {
+    display: flex;
+    align-items: center;
 }
 
+.boardwrite>div {
+    margin-right: 10px;
+    font-size: 17px;
+}
+
+.boardwriter {
+    width: 140px;
+    color: white;
+    background: none;
+    border: 2px solid white;
+    border-radius: 10px;
+    font-size: 14px;
+    padding: 3px;
+}
+
+.boardmovietitle {
+    width: 180px;
+    color: white;
+    background: none;
+    border: 2px solid white;
+    border-radius: 10px;
+    font-size: 14px;
+    padding: 3px;
+}
+
+.boardwrite>textarea {
+    width: 300px;
+    color: white;
+    background: none;
+    border: 2px solid white;
+    border-radius: 10px;
+    font-size: 14px;
+    padding-top: 5px;
+    padding-left: 5px;
+}
+
+.writebutton {
+    background-color: red;
+    color: white;
+    font-size: 18px;
+    padding: 5px 10px;
+    border: 1px solid white;
+    border-radius: 10px;
+}
+
+.writebutton:hover {
+    background-color: #ff3636;
+}
+
+/* board list */
+.boardlistbox {
+    border: 1px solid white;
+    padding-bottom: 10px;
+    padding-left: 7px;
+    padding-right: 7px;
+    margin-top: 20px;
+    border-radius: 3px;
+    margin-bottom: 40px;
+}
+
+/* board Item */
 .boardItem {
-    border: 1px solid white;
-    padding: 20px;
+    border-bottom: 2px dashed white;
+    padding: 14px 10px;
 }
-.borderitemname {
+
+.borderitemtitle {
     margin-bottom: 10px;
 }
-.borderitemtitle {
-    padding: 10px;
-    border-bottom: 1px dashed white;
+
+@media (max-width:990px) {
+    .boardinputArea {
+        display: block;
+    }
+
+    .boardwrite {
+        margin-bottom: 20px;
+    }
+
+    .boardwriter {
+        margin-left: 35px;
+        width: 80%;
+    }
+
+    .boardmovietitle {
+        width: 80%;
+    }
+
+    .boardwrite>textarea {
+        margin-left: 37px;
+        width: 80%;
+    }
+
+    .writebuttonarea {
+        display: flex;
+        justify-content: center;
+    }
+
+    .writebutton {
+        width: 50%;
+    }
+
 }
-.borderitemcontent {
-    margin-top: 15px;
-    padding: 0px 15px;
+
+@media (min-width:1200px) {
+    .boardwriter {
+        width: 200px;
+    }
+
+    .boardmovietitle {
+        width: 250px
+    }
+
+    .boardwrite>textarea {
+        width: 400px;
+    }
 }
