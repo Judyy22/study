@@ -1,6 +1,9 @@
+@import url('https://fonts.googleapis.com/css2?family=Nanum+Gothic&display=swap');
+
 body {
     margin: 0;
     overflow-y: hidden;
+    font-family: 'Nanum Gothic', sans-serif;
 }
 
 .outer {
@@ -15,10 +18,6 @@ body {
 
 .inner {
     height: 100vh;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    font-size: 100px;
 }
 
 .bg-yellow {
@@ -38,3 +37,50 @@ body {
     height: 5px;
     background-color: gray;
 }
+
+/* Hello.js */
+h1 {
+    margin: 0;
+}
+
+.homemain {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    height: 100vh;
+}
+
+
+.randomBox {
+    display: flex;
+    margin: 10px;
+    align-items: flex-end;
+}
+
+.randomBox>div {
+    font-size: 20px;
+    font-weight: bold;
+    border: 3px solid black;
+    background-color: white;
+    border-radius: 25px;
+    width: 300px;
+    height: 25px;
+    text-align: center;
+    padding: 9px;
+}
+
+.icon {
+    font-size: 30px;
+    transform: rotate(-10deg);
+    position: relative;
+    right: 20px;
+    top: 15px;
+}
+
+.developer {
+    font-size: 30px;
+    margin-bottom: 10px;
+}
+
+/* Hello.js End*/

@@ -125,8 +125,9 @@ const Home = () => {
                 <Aboutme />
             </div>
             <div className="divider"></div>
-            <div className="inner bg-pink">3</div>
-            <div className="inner bg-pink">4</div>
+            <div className="inner bg-yellow">3</div>
+            <div className="divider"></div>
+            <div className="inner bg-blue">4</div>
         </div>
     );
 };
