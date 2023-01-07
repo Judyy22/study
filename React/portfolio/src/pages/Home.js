@@ -119,17 +119,17 @@ const Home = () => {
         <div ref={outerDivRef} className="outer">
             <AnimatedCursor />
             <Dots scrollIndex={scrollIndex} />
-            <div className="inner bg-yellow">
+            <div className="inner bg-purple">
                 <Hello />
             </div>
             <div className="divider"></div>
-            <div className="inner bg-yellow">
+            <div className="inner bg-lightpurple">
                 <Aboutme />
             </div>
             <div className="divider"></div>
-            <div className="inner bg-yellow">3</div>
+            <div className="inner bg-lightpurple">3</div>
             <div className="divider"></div>
-            <div className="inner bg-blue">4</div>
+            <div className="inner bg-lightpurple">4</div>
         </div>
     );
 };
