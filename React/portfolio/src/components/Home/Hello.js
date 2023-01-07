@@ -33,7 +33,7 @@ const Hello = () => {
                     <FontAwesomeIcon
                         icon={faArrowPointer}
                         className="icon"
-                        onMouseOver={play}
+                        onMouseEnter={play}
                     />
                 </div>
                 <div className="developer">Developer</div>

@@ -1,5 +1,6 @@
 import React from "react";
 import { useState, useEffect, useRef } from "react";
+import AnimatedCursor from "../components/AnimatedCursor";
 import Dots from "../components/Dots";
 import Aboutme from "../components/Home/Aboutme";
 import Hello from "../components/Home/Hello";
@@ -91,7 +92,7 @@ const Home = () => {
                     //현재 3페이지
                     console.log("현재 3페이지, up");
                     outerDivRef.current.scrollTo({
-                        top: pageHeight + DIVIDER_HEIGHT * 3,
+                        top: pageHeight + DIVIDER_HEIGHT,
                         left: 0,
                         behavior: "smooth",
                     });
@@ -100,7 +101,7 @@ const Home = () => {
                     // 현재 4페이지
                     console.log("현재 4페이지, up");
                     outerDivRef.current.scrollTo({
-                        top: pageHeight * 2 + DIVIDER_HEIGHT * 3,
+                        top: pageHeight * 2 + DIVIDER_HEIGHT * 2,
                         left: 0,
                         behavior: "smooth",
                     });
@@ -116,12 +117,13 @@ const Home = () => {
     }, []);
     return (
         <div ref={outerDivRef} className="outer">
+            <AnimatedCursor />
             <Dots scrollIndex={scrollIndex} />
             <div className="inner bg-yellow">
                 <Hello />
             </div>
             <div className="divider"></div>
-            <div className="inner bg-blue">
+            <div className="inner bg-yellow">
                 <Aboutme />
             </div>
             <div className="divider"></div>
