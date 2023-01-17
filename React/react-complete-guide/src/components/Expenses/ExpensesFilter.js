@@ -1,0 +1,20 @@
+import React from "react";
+
+import "./ExpensesFilter.css";
+
+const ExpensesFilter = () => {
+    return (
+        <div className="expenses-filter">
+            <div className="expenses-filter__control">
+                <label>Filter by year</label>
+                <select>
+                    <option value="2021">2024</option>
+                    <option value="2020">2023</option>
+                    <option value="2019">2022</option>
+                </select>
+            </div>
+        </div>
+    );
+};
+
+export default ExpensesFilter;
