@@ -58,6 +58,7 @@ const render = () => {
         .join("");
 
     console.log(newsHTML);
+    console.log("Click");
 
     document.getElementById("news-board").innerHTML = newsHTML;
 };
