@@ -15,7 +15,6 @@ const ExpenseItem = (props) => {
 
     return (
         <div>
-            <ExpensesFilter />
             <Card className="expense-item">
                 <ExpenseDate date={props.date} />
                 <div className="expense-item__description">
