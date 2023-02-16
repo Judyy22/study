@@ -66,6 +66,22 @@ h1 {
     padding: 9px;
 }
 
+.Box-cursor::after {
+    content: "";
+    margin-left: 0.4rem;
+    border-right: 2px solid #777;
+    animation: cursor 0.9s infinite steps(2);
+}
+
+@keyframes cursor {
+    from {
+        border-right: 2px solid #222;
+    }
+    to {
+        border-right: 2px solid #777;
+    }
+}
+
 .icon {
     font-size: 30px;
     transform: rotate(-10deg);

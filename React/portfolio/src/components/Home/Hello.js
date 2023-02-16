@@ -2,7 +2,7 @@ import React, { useEffect, useState } from "react";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faArrowPointer } from "@fortawesome/free-solid-svg-icons";
 
-const text = [
+const textArray = [
     "끊임없이 성장하는",
     "신뢰할 수 있는",
     "항상 공부할 준비가 되어있는",
@@ -11,30 +11,45 @@ const text = [
 ];
 
 const Hello = () => {
-    const [randomSelect, setRandomSelect] = useState(null);
+    const [showTitle, setShowTitle] = useState(""); //n초마다 이전 텍스트 + 현재 텍스트 합쳐줌
+    const [count, setCount] = useState(0); //글자 수 카운트
+    const [textCount, setTextCount] = useState(0); //글자 배열 카운트
+    const text = textArray[textCount]; //완성할 텍스트
 
-    const play = () => {
-        setRandomSelect(randomChoice());
-    };
-    console.log("뭐가 나올라나", randomSelect);
-    const randomChoice = () => {
-        let itemArray = Object.keys(text); // 객체의 키값만 뽑아서 어레이로 만들어주는 함수
-        console.log("item array", itemArray);
-        let randomItem = Math.floor(Math.random() * itemArray.length);
-        let final = itemArray[randomItem];
-        return text[final];
-    };
+    useEffect(() => {
+        const typingInterval = setInterval(() => {
+            setShowTitle((prevTitleValue) => {
+                let result = prevTitleValue
+                    ? prevTitleValue + text[count]
+                    : text[0];
+                setCount(count + 1);
+
+                if (count == text.length) {
+                    setCount(0);
+                    setShowTitle("");
+                    if (textCount == textArray.length - 1) {
+                        setTextCount(0);
+                    } else {
+                        setTextCount(textCount + 1);
+                    }
+                }
+
+                return result;
+            });
+        }, 200);
+
+        return () => {
+            clearInterval(typingInterval);
+        };
+    });
+
     return (
         <div className="homemain">
             <>
                 <h1>Hi, I am</h1>
                 <div className="randomBox">
-                    <div>{randomSelect}</div>
-                    <FontAwesomeIcon
-                        icon={faArrowPointer}
-                        className="icon"
-                        onMouseEnter={play}
-                    />
+                    <div className="Box-cursor">{showTitle}</div>
+                    <FontAwesomeIcon icon={faArrowPointer} className="icon" />
                 </div>
                 <div className="developer">Developer</div>
                 <div>안녕하세요, 이승희 입니다.</div>
