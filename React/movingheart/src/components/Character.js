@@ -1,35 +1,31 @@
 import React, { useEffect, useRef, useState } from "react";
 
 const Character = () => {
-    let ref = useRef();
-
-    const [background, setBackground] = useState({ x: -800, y: -1000 });
-    const [character, setCharacter] = useState({ x: 200, y: 200 });
+    const ref = useRef();
+    const [ctx, setCtx] = useState();
 
     useEffect(() => {
-        drawBackground();
-        drawCharacter();
-    }, [character, background]);
+        const canvas = ref.current;
+        setCtx(canvas.getContext("2d"));
+    }, []);
 
-    const canvas = ref.current;
-    const context = canvas.getContext("2d");
+    const drawSquare = (event) => {
+        ctx.strokeStyle = "red";
+        let x = event.clientX - ref.current.offsetLeft;
+        let y = event.clientY - ref.current.offsetTop;
+        let w = 50;
+        let h = 50;
 
-    const drawBackground = () => {
-        const bgImage = "rgb(255, 167, 167)";
-        context?.drawImage(bgImage, background.x, background.y, 2560, 2048);
-    };
-
-    const drawCharacter = () => {
-        const characterImage = "rgb(255, 255, 0)";
-        context?.drawImage(characterImage, 200, 200, 32, 50);
+        ctx.strokeRect(x - w / 2, y - h / 2, w, h);
     };
 
     return (
         <div>
             <canvas
-                width={window.innerWidth}
-                height={window.innerHeight}
                 ref={ref}
+                width={1080}
+                height={1080}
+                onMouseDown={drawSquare}
             />
         </div>
     );
