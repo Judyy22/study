@@ -105,10 +105,6 @@ const Character = () => {
             render();
         };
 
-        const getRandomInt = (min, max) => {
-            return Math.floor(Math.random() * (max - min + 1)) + min;
-        };
-
         const signedRandom = () => {
             return Math.random() - Math.random();
         };
@@ -130,8 +126,8 @@ const Character = () => {
         const setDim = () => {
             ww = window.innerWidth;
             wh = window.innerHeight;
-            canvas.width = (ww * window.devicePixelRatio) | 0;
-            canvas.height = (wh * window.devicePixelRatio) | 0;
+            canvas.width = ww | 0;
+            canvas.height = wh | 0;
             context.scale(devicePixelRatio, devicePixelRatio);
         };
 
