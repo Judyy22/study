@@ -1,19 +1,19 @@
-body{
+body {
     margin: 0px;
     font-family: spotify-circular, Helvetica, Arial, sans-serif;
     color: white;
     text-decoration: none;
 }
-a{
+a {
     text-decoration: none;
     color: white;
 }
 
-a:hover{
+a:hover {
     color: #1ed760;
 }
 
-nav{
+nav {
     height: 80px;
     background-color: black;
     display: flex;
@@ -21,30 +21,30 @@ nav{
     align-items: center;
 }
 
-main{
+main {
     height: 968px;
-    background-color: rgb(41,65,171);
+    background-color: rgb(41, 65, 171);
     background-image: url(https://www-growth.scdn.co/static/home/bursts.svg);
-    background-size: 175%;    
+    background-size: 175%;
     background-position: 46% 4%;
     display: flex;
     align-items: center;
     justify-content: center;
 }
 
-footer{
+footer {
     height: 530px;
     background-color: black;
     display: flex;
     justify-content: center;
 }
 
-.menu{
-   padding: 28px 17px;
-   font-weight: 700;
+.menu {
+    padding: 28px 17px;
+    font-weight: 700;
 }
 
-.headline{
+.headline {
     font-size: 156px;
     font-weight: 900;
     color: #1ed760;
@@ -53,23 +53,23 @@ footer{
     padding-bottom: 40px;
 }
 
-.headline-first{
+.headline-first {
     position: relative;
     left: -2.5em;
 }
 
-.sub-headline{
+.sub-headline {
     color: #1ed760;
     text-align: center;
     font-size: 18px;
     padding-bottom: 40px;
 }
 
-.button-area{
+.button-area {
     text-align: center;
 }
 
-.button-style{
+.button-style {
     background-color: #1ed760;
     padding: 14px 32px;
     border: none;
@@ -78,59 +78,57 @@ footer{
     font-weight: 700;
 }
 
-.button-style:hover{
+.button-style:hover {
     transform: scale(1.1);
 }
 
-.container{
+.container {
     max-width: 1170px;
     padding-top: 80px;
     padding-bottom: 50px;
     width: 100%;
 }
 
-.footer-menu{
+.footer-menu {
     display: flex;
     justify-content: space-between;
-    height:346px;
+    height: 346px;
 }
 
-.first-box{
+.first-box {
     display: flex;
     justify-content: space-between;
     width: 60%;
-
 }
-.column{
+.column {
     display: flex;
     flex-direction: column;
-    padding: 0 15px;;
-    
+    padding: 0 15px;
 }
 
-.second-box{
+.second-box {
     width: 40%;
 }
 
-.sub-title{
+.sub-title {
     color: #919496;
     font-weight: 900;
     margin: 20px 0px;
 }
 
-.footer-menu-item{
+.footer-menu-item {
     padding-bottom: 15px;
     padding-top: 3px;
     font-size: 16px;
 }
 
-.second-box{
+.second-box {
     display: flex;
     justify-content: end;
     width: 40%;
 }
 
-.icon-box{
+.icon-box {
     width: 54px;
     height: 54px;
     background-color: #222322;
@@ -141,25 +139,25 @@ footer{
     align-items: center;
 }
 
-.icon{
+.icon {
     font-size: 24px;
 }
 
-.first-line{
+.first-line {
     display: flex;
     justify-content: flex-end;
     color: #919496;
     font-size: 12px;
 }
 
-.second-line{
+.second-line {
     display: flex;
     justify-content: space-between;
     margin-top: 12px;
     color: #919496;
 }
 
-.second-line-item{
+.second-line-item {
     color: #919496;
     margin-right: 24px;
 }
