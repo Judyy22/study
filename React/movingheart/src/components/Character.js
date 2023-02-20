@@ -8,10 +8,8 @@ const Character = () => {
 
     useEffect(() => {
         const canvas = ref.current;
-        // canvas.width = window.innerWidth * 0.9;
-        // canvas.height = window.innerHeight;
-
         const context = canvas.getContext("2d");
+
         const chars = [];
         const max_chars = 200;
         const separation = 1;
@@ -37,8 +35,8 @@ const Character = () => {
                     this.y = Y * COS - Z * SIN;
                     this.z = Y * SIN + Z * COS;
                 } else if (dir === "y") {
-                    this.x = Y * COS - Z * SIN;
-                    this.z = Y * SIN + Z * COS;
+                    this.x = X * COS - Z * SIN;
+                    this.z = X * SIN + Z * COS;
                 }
             }
 
@@ -76,6 +74,7 @@ const Character = () => {
 
                 context.beginPath();
                 context.fillStyle = col;
+                context.font = size + "px monospace";
                 context.fillText(this.letter, XP, YP);
                 context.fill();
                 context.closePath();
